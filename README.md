@@ -28,7 +28,9 @@
 3. 我们的交流包含但不限于以上两个方面。
 
 如何使用git：
-如果你是新手，还不知道怎么用git，可以看看这个。https://lab.github.com/install
+如果你是新手，还不知道怎么用git，可以看看这个。
+github有一个关于如何使用git的交互式教程，先安装Github App，地址https://lab.github.com/install
+再看看《Introduction to Github》。
 
 git的维护管理：
 1. 没有维护过git，但是应该不难
