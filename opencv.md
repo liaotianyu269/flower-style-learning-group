@@ -65,3 +65,8 @@ line；线段
 给图片注释文字  
 putText  
 annotation  
+
+视频读取：  
+VideoCapture类 相当于于C++ ifstream  
+VideoCapture capture("1.avi) or VideoCapture capture(0) 表示从视频文件或摄像头获取图像。  
+capture >> MAT 读入视频图像  
