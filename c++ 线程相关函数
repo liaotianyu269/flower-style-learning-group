@@ -1,0 +1,52 @@
+CreateThread（创建线程）
+函数原型：
+HANDLE WINAPI CreateThread(
+LPSECUTITY_ATTRIBUTES lpThreadAttributes,//表示线程内核对象的安全属性，一般传入NULL表示使用默认设置
+Size_t dwStackSIZE,//表示线程栈空间大小。传入0表示使用默认大小（1MB）
+LPTHREAD_START_ROUTINE lpStartAddress,//表示新线程所执行的线程函数地址，多个线程可以使用同一个函数地址
+LPVOID lpParamter,//传给线程函数的参数。
+DWORD dwCreationFlags,//指定额外的标志来控制线程的创建，为0表示线程创建之后立即就可以进行调度，如果
+CREATE_SUSPENDED则表示线程创建后暂停运行，这样它就无法调度，直到调用ResumeThread()。 
+
+LPDWORD lpThreadId//返回线程的ID号，传入NULL表示不需要返回该线程ID号
+);
+函数返回值：
+成功返回新线程的句柄，失败返回NULL
+
+WaitForSingleObject
+函数功能：等待函数-使线程进入等待状态，直到指定的内核对象被触发。
+DWORD  WINAPIWaitForSingleObject(
+  HANDLE hHandle,//要等待的内核对象。
+  DWORD dwMilliseconds//最长等待时间，以毫秒为单位，
+);
+函数返回值：
+在指定的时间内对象被触发，函数返回WAIT_OBJECT_0。超过最长等待时间对象仍未被触发返回WAIT_TIMEOUT。传入参数有错误将返回WAIT_FAILE
+
+CreateEvent:
+createEvent是创建windows事件的意思，作用主要用在判断线程的退出，线程锁定方面
+函数功能描述：创建或打开一个命名的或无名的事件对象。
+EVENT有两种状态：发信号，不发信号。
+
+SetEvent/ResetEVENT分别将EVENT置为两种状态分别是发信号与不发信号。
+waitForSingleObject()等待，直到参数所指定的OBJECT成为信号状态时才返回
+
+HANDLE CreateEvent(
+LPSECURITY_ATTRIBUTES  lpEventAttributes, // 安全属性，一个指向SECURITY_ATTRIBUTES结的指针，确定返回的句柄是否可被子进程继承。如果lpEventAttributes是NULL，此句柄不能被继承。Windows NT/2000：lpEventAttributes的结构中的成员为新的事件指定了一个安全符。如果lpEventAttributes是NULL，事件将获得一个默认的安全符。
+BOOL  bManualReset, // 复位方式，指定将事件对象创建成手动复原还是自动复原。设为True,必须使用ResetEvent函数来手动将事件的状态复原到无信号状态。False:当事件被一个等待线程释放以后，系统将自动将事件状态复原为无信号
+BOOL  bInitialState, // 初始状态，指定事件对象的初始状态。如果为TRUE，初始状态为有信号状态；否则为无信号状态。
+LPCTSTR  lpName // 对象名称，指定事件的对象的名称，是一个以0结束的字符串指针。
+
+CreateIoCompletionPort:
+1、用于创建一个完成端口对象。
+2、将一个句柄同完成端口关联到一起。
+函数原型：
+HANDOLE CreateIoCompletionPort(
+	HANDLE FileHandle,//打开文件句柄或INVALID_HANDLE_VALUE,句柄必须是支持重叠I/O的对象。
+	
+	HANDLE ExistingCompletionPort,//
+	
+	UlONG_PTR CompletionKey,
+	
+	DWORD NumberOfConcurrentThreads//同时允许执行的线程数量。理想情况下，我们希望每个处理器各自负责一个线程的运行，为完成端口提供服务，避免过于频繁的线程“场景”切换。若将该参数设为0，表明系统内安装了多少个处理器，便允许同时运行多少个线程！可用下述代码创建一个I/O完成端口
+	
+)
