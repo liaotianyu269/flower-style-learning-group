@@ -52,7 +52,7 @@ destroyWindow(name),destroyAllWindows() 不需手动调用，程序退出时，�
 
 OPENCV 常用的函数
 waitKey（）  给定的时间内(ms)等待用户按键触发，返回按键对应的ASC码;如果用户没有按下键,则接续等待。
-
+saturate_cast<value type>()   防数据溢出：(如value type为uchar，则data<0？0：data or data>255?255:data)
 
 OPENCV不常用功能
 
