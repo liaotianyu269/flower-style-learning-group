@@ -5,5 +5,4 @@ getTickFrequency()
 类型转换：
 static_cast<value type>()   一般基础类型的转换时没问题的
 
-防数据溢出：
-saturate_cast<value type>()   (data<0？0：data or data>255?255:data)
+
