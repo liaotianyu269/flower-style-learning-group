@@ -50,7 +50,8 @@ imwrite（path,mat）
 namedWindow(name,mode)  WINDOW_AUTOSIZE,WINDOW_NORMAL
 destroyWindow(name),destroyAllWindows() 不需手动调用，程序退出时，自动销毁 窗口
 
-
+OPENCV 常用的函数
+waitKey（）  给定的时间内(ms)等待用户按键触发，返回按键对应的ASC码;如果用户没有按下键,则接续等待。
 
 
 OPENCV不常用功能
