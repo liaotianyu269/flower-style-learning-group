@@ -10,9 +10,14 @@ cv::MAT和cv::MAT的创建方法：
     (MAT_<double>(rows,cols)<<1,2,3,4，...)；MAT_容器
     MAT A=MAT.clone（）；MAT.clone()成员函数
     MAT A; MAT.copyTo（A）；MAT.copyTo（）成员函数
-
-MAT只有copyTo（）和clone（）方法是深度拷贝，赋值或拷贝构造函数都是浅拷贝
-
+    MAT只有copyTo（）和clone（）方法是深度拷贝，赋值或拷贝构造函数都是浅拷贝
+MAT成员数据：
+    MAT.rows,MAT.cols,MAT.type(),MAT.channels(),MAT.Size()
+MAT像素访问：
+    MAT.data,MAT.ptr<value type>(rows),MAT.begin<Vec3b>(),MAT.end<Vec3b>(),MAT.at<Vec3b>(rows,cols)
+    MAT.isContinuous()
+MAT通道分离、分离
+    
 cv::Point，cv::Point2f point；
 point.x,point.y
 
@@ -30,6 +35,12 @@ rect.x,rect.y,rect.width,rect.height,rect.Size(),rect.area(),rect.tl(),rect.br()
 
 cvtColor（srcimage，dstimage，COLOR_BGR2HSV...）
 COLOR_BGR2GRAY,COLOR_BGR2HSV,COLOR_BGR2YCrCb,(常用的颜色空间:GRAY,RGB,HSV,YCrCb；BGR是默认读取的彩色模式)
+
+
+
+
+
+
 
 OPENCV不常用功能
 
