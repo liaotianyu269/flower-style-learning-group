@@ -1,6 +1,6 @@
 OPENCV里的常用数据结构：
 cv::MAT和cv::MAT的创建方法：
-    MAT A=B;拷贝构造函数
+		MAT A=B;拷贝构造函数
     MAT A（rows,cols,CV_8UC1,Scalar()）;构造函数
     MAT A（Size，CV_8UC1,Scalar()）;构造函数
     MAT A; A.create（rows，cols，CV_8UC1）；MAT.create成员函数
