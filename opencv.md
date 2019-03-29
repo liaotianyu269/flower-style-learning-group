@@ -1,6 +1,6 @@
 # OPENCV里的常用数据结构：  
 ## cv::MAT和cv::MAT的创建方法：  
-	  MAT A=B;拷贝构造函数  
+    MAT A=B;拷贝构造函数  
     MAT A（rows,cols,CV_8UC1,Scalar()）;构造函数  
     MAT A（Size，CV_8UC1,Scalar()）;构造函数  
     MAT A; A.create（rows，cols，CV_8UC1）；MAT.create成员函数  
@@ -11,10 +11,13 @@
     MAT A; MAT.copyTo（A）；MAT.copyTo（）成员函数  
     MAT只有copyTo（）和clone（）方法是深度拷贝，赋值或拷贝构造函数都是浅拷贝  
 ## MAT成员数据：  
-    MAT.rows,MAT.cols,MAT.type(),MAT.channels(),MAT.Size(),MAT.dims  
+    MAT.rows,MAT.cols,MAT.type(),MAT.channels(),MAT.Size(),MAT.dims,MAT.total()  
 ## MAT像素访问：  
-    MAT.data,MAT.ptr<value type>(rows),MAT.begin<Vec3b>(),MAT.end<Vec3b>(),MAT.at<Vec3b>(rows,cols)  
-    MAT.isContinuous()  
+    MAT.data,MAT.step[0],MAT.step[1] 分别获取矩阵首个数值的地址，每行的字节数，每个数值的字节数，配合使用，效率最快  
+    MAT.ptr<value type>(rows) 获取某行的首地址，效率次之  
+    MAT.begin<Vec3b>(),MAT.end<Vec3b>() Vec3b表示3维数组,也可以是其他value type 如int，效率未知  
+    MAT.at<Vec3b>(rows,cols)  效率最慢，但可读性最好  
+    MAT.isContinuous()  矩阵存储是否连续  
 ## MAT通道分离、分离  
     split(MAT,MAT Vector),merge(MAT Vector,MAT)  
     
