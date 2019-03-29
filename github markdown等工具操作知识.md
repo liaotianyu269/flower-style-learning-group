@@ -5,14 +5,6 @@
 例如：文件名称为 opencv.md，则在当前目录下创建了一个markdown文件  
 例如：文件名称为C++/opencv.md，则在当前目录下的C++文件夹下创建了opencv.md文件  
 
-## 在文档编辑中显示图片的教程  
-首先上传需要添加的图片，通过Upload files按钮添加  
-其次点击图片，取得图片的网页地址  
-在文档中输入"![图片的注释内容]（图片的网页地址）"  
-即可显示图片了  
-这里有一个显示图片的教程，https://blog.csdn.net/Cassie_zkq/article/details/79968598  
-![显示图片](https://github.com/liaotianyu269/--/blob/master/%E6%8D%95%E8%8E%B7.PNG)  
-
 # markdown 文本编辑器基本语法  
 因为github上.md文件使用较多，所以可以了解下markdow编辑器的基本语法，也相当于多学了一个知识点了  
 这是一个markdown基本语法介绍的网页https://www.cnblogs.com/yabin/p/6366151.html  
@@ -32,16 +24,38 @@
 >wo shi yinyong de wenben  
 ## 引用代码  
 用''，或''' '''框起来  
-‘int a=3‘  
-''' C++  
+`int a=3`  
+```
 int a=3  
 int b=4  
 int c=a+b  
-'''  
+```  
 ## 添加超链接  
 第一种方法: [链接到百度](https://www.baidu.com "百度")  
 第二种方法:   
 [还是链接到百度][baidu]  
 
 [baidu]:https://www.baidu.com  
+## 分割线---  
+---  
+*上面是一个分割线,用---*  
+## 层级结构排版  
+\*,+,- 和空格，或者数字+‘.’+‘空格’来表示层级  
+- 第一层级，用的-  
+- 第二层级，用的-  
+  1. 2.1层级，用的1.   
+  2. 2.2层级，用的2.   
++ 第三层级，用的+   
+  * 3.1层级，用的*   
+**注意符号后面加的有空格`space`**
+## 添加脚注  
+类似于超链接  
+这是一个脚注[^jiaozhu]  
 
+[^jiaozhu]:hello  
+## 添加图片  
+首先上传需要添加的图片，通过Upload files按钮添加  
+其次点击图片，取得图片的网页地址  
+>命令是这样的: ![图片的注释内容]（图片的网页地址）  
+这里有一个显示图片的教程，https://blog.csdn.net/Cassie_zkq/article/details/79968598  
+![显示图片](https://github.com/liaotianyu269/--/blob/master/%E6%8D%95%E8%8E%B7.PNG)  
