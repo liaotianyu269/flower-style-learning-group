@@ -11,7 +11,7 @@
     MAT A; MAT.copyTo（A）；MAT.copyTo（）成员函数  
     MAT只有copyTo（）和clone（）方法是深度拷贝，赋值或拷贝构造函数都是浅拷贝  
 ## MAT成员数据：  
-    MAT.rows,MAT.cols,MAT.type(),MAT.channels(),MAT.Size()  
+    MAT.rows,MAT.cols,MAT.type(),MAT.channels(),MAT.Size(),MAT.dims  
 ## MAT像素访问：  
     MAT.data,MAT.ptr<value type>(rows),MAT.begin<Vec3b>(),MAT.end<Vec3b>(),MAT.at<Vec3b>(rows,cols)  
     MAT.isContinuous()  
