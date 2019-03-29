@@ -20,6 +20,7 @@
     MAT.begin<Vec3b>(),MAT.end<Vec3b>() Vec3b表示3维数组,也可以是其他value type 如int，效率未知  
     MAT.at<Vec3b>(rows,cols)  效率最慢，但可读性最好  
     MAT.isContinuous()  矩阵存储是否连续  
+    MAT.empty()  若MAT.total() 为0 或 MAT.data 为NULL，则返回True，否则返回False  
 ## MAT通道分离、分离  
     split(MAT,MAT Vector),merge(MAT Vector,MAT)  
     
