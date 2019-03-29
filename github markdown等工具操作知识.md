@@ -13,7 +13,7 @@
 这里有一个显示图片的教程，https://blog.csdn.net/Cassie_zkq/article/details/79968598  
 ![显示图片](https://github.com/liaotianyu269/--/blob/master/%E6%8D%95%E8%8E%B7.PNG)  
 
-# github markdown 文本编辑器基本语法  
+# markdown 文本编辑器基本语法  
 因为github上.md文件使用较多，所以可以了解下markdow编辑器的基本语法，也相当于多学了一个知识点了  
 这是一个markdown基本语法介绍的网页https://www.cnblogs.com/yabin/p/6366151.html  
 有更好更全的可以贴出来  
