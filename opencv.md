@@ -8,6 +8,8 @@
     MAT::zeros（rows，cols，CV_8UC1）;全零矩阵  
     (MAT_<double>(rows,cols)<<1,2,3,4，...)；MAT_容器  
     MAT A=MAT.clone（）；MAT.clone()成员函数  
+    MAT A=B.row(n) or MAT A=B.col(m) or MAT A=B.rowRange(Range()) or MAT A=B.colRange(Range()) 获取某行或某列或连续行、连续列的值 
+    MAT A=B.(Rect(1,2,3,4)) or MAT A=B.(Rect(Point,Size)) or MAT A=B.(Rect(Point,Point)) 利用Rect类来获取矩形区域
     MAT A; MAT.copyTo（A）；MAT.copyTo（）成员函数  
     MAT只有copyTo（）和clone（）方法是深度拷贝，赋值或拷贝构造函数都是浅拷贝  
 ## MAT成员数据：  
@@ -25,7 +27,21 @@
 imread(path,readmode)  readmode:IMREAD_UNCHANGED-1,IMREAD_GRAY 0,IMREAD_COLOR 1 OR >0,IMREAD_ANYDEPTH 2,IMREAD_ANYCOLOR 4  
 imshow(windowname,mat)  
 imwrite（path,mat）  
-  
+
+## MAT的四则运算  
+### 加法      （A,B矩阵的 行列数 需相同）  
+    MAT A+ MAT B，按位相加  
+### 减法      （A,B矩阵的 行列数 需相同）  
+    MAT A- MAT B，按位相减  
+### 除法      （A,B矩阵的 行列数 需相同）  
+    MAT A/ MAT B，按位相除  
+### 点乘      （A,B矩阵的 行列数 需相同）  
+    MAT A.dot( MAT B)，点乘类似于求向量内积，相应位相乘后求和，若是多通道，就各通道独立求内积，再将各通道求和  
+### 按位乘    （A,B矩阵的 行列数 需相同）  
+    MAT A.mul(MAT B)， 按位乘  
+### 矩阵乘法  （A的列数与B的行数 需相同）  
+    MAT A * MAT B， 数据类型必须是float，通道数最多两个  
+    
 ## 点    
 cv::Point，cv::Point2f point；  
 point.x,point.y  
