@@ -11,7 +11,7 @@
     MAT A; MAT.copyTo（A）；MAT.copyTo（）成员函数  
     MAT只有copyTo（）和clone（）方法是深度拷贝，赋值或拷贝构造函数都是浅拷贝  
 ## MAT成员数据：  
-    MAT.rows,MAT.cols,MAT.type(),MAT.channels(),MAT.Size(),MAT.dims,MAT.total()  
+    MAT.rows,MAT.cols,MAT.type(),MAT.channels(),MAT.Size(),MAT.dims,MAT.total(),MAT.elemSize(),MAT.elemSize1()  
 ## MAT像素访问：  
     MAT.data,MAT.step[0],MAT.step[1] 分别获取矩阵首个数值的地址，每行的字节数，每个数值的字节数，配合使用，效率最快  
     MAT.ptr<value type>(rows) 获取某行的首地址，效率次之  
