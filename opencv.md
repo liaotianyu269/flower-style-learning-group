@@ -28,7 +28,6 @@
     imread(path,readmode)  readmode:IMREAD_UNCHANGED-1,IMREAD_GRAY 0,IMREAD_COLOR 1 OR >0,IMREAD_ANYDEPTH 2,IMREAD_ANYCOLOR 4  
     imshow(windowname,mat)  
     imwrite（path,mat）  
-
 ## MAT的四则运算  
 ### 加法      （A,B矩阵的 行列数 需相同）  
     MAT A+ MAT B，按位相加  
@@ -42,28 +41,21 @@
     MAT A.mul(MAT B)， 按位乘  
 ### 矩阵乘法  （A的列数与B的行数 需相同）  
     MAT A * MAT B， 数据类型必须是float，通道数最多两个  
-    
 ## 点    
     cv::Point，cv::Point2f point；  
     point.x,point.y  
-  
 ## 4元素double类型数组  
     Scalar()  
-  
 ## Size类  
     Size，Size_<int>  Size.width,Size.height  整形的宽高。  
-  
 ## Range类  
     Range 类似于python，matlab中的range  
     Range（start，end）表示start到end-1连续序列  
     Range::all（）表示所有的行或列  
-  
 ## 矩形类  
     Rect rect;  
     rect.x,rect.y,rect.width,rect.height,rect.Size(),rect.area(),rect.tl(),rect.br(),rect1 & rect2,rect1 | rect2,rect+point,rect+size。 
     左上角横纵坐标，矩形宽高，（宽高），面积，左上角、右下角坐标，矩形交集、并集，矩形平移，伸缩  
-  
-  
 # OPENCV常用的函数：  
     waitKey（）  给定的时间内(ms)等待用户按键触发，返回按键对应的ASC码;如果用户没有按下键,则接续等待。  
     saturate_cast<value type>()   防数据溢出：(如value type为uchar，则data<0？0：data or data>255?255:data)  
@@ -75,18 +67,14 @@
 ## 颜色空间转换  
     cvtColor（srcimage，dstimage，COLOR_BGR2HSV...）  
     COLOR_BGR2GRAY,COLOR_BGR2HSV,COLOR_BGR2YCrCb,(常用的颜色空间:GRAY,RGB,HSV,YCrCb；BGR是默认读取的彩色模式)  
-  
-  
 # OPENCV不常用功能：  
 ## 基本图形绘制  
     circle；圆形  
     rectangle；矩形  
     line；线段  
-  
 ## 给图片注释文字  
     putText  
     annotation  
-
 ## 视频读取：  
     VideoCapture类 相当于于C++ ifstream  
     VideoCapture capture("1.avi) or VideoCapture capture(0) 表示从视频文件或摄像头获取图像。  
