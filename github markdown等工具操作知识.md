@@ -78,6 +78,7 @@ int c=a+b
 ## 添加脚注  
 类似于超链接  
 这是一个脚注 [^jiaozhu]  
+
 [^jiaozhu]: shit jiaozhu  
 ## 添加图片  
 首先上传需要添加的图片，通过Upload files按钮添加  
