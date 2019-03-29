@@ -32,7 +32,7 @@
 >wo shi yinyong de wenben  
 ## 引用代码  
 用''，或''' '''框起来  
-’int a=3’  
+‘int a=3‘  
 ''' C++  
 int a=3  
 int b=4  
@@ -42,5 +42,6 @@ int c=a+b
 第一种方法: [链接到百度](https://www.baidu.com "百度")  
 第二种方法:   
 [还是链接到百度][baidu]  
+
 [baidu]:https://www.baidu.com  
 
