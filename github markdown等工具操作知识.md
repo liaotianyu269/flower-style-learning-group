@@ -7,7 +7,9 @@
 
 # markdown 文本编辑器基本语法  
 因为github上.md文件使用较多，所以可以了解下markdow编辑器的基本语法，也相当于多学了一个知识点了  
-这是一个markdown基本语法介绍的网页https://www.cnblogs.com/yabin/p/6366151.html  
+这是一个markdown基本语法介绍的网页  
+https://www.cnblogs.com/yabin/p/6366151.html  
+https://www.cnblogs.com/jaesun/p/Markdown-ji-chu-yu-fa.html#%E8%84%9A%E6%B3%A8footnote  
 有更好更全的可以贴出来  
 ## 添加标题（标题字号会比较大且是加粗的）：  
 可添加六级标题，用#和空格来表示标题：  
@@ -72,11 +74,10 @@ int c=a+b
   2. 2.2层级，用的2.   
 + 第三层级，用的+   
   * 3.1层级，用的*   
-```
+```  
 ## 添加脚注  
 类似于超链接  
-这是一个脚注[^jiaozhu]  
-  [^jiaozhu]: hello  
+这是一个脚注 [^jiaozhu]  
 ## 添加图片  
 首先上传需要添加的图片，通过Upload files按钮添加  
 其次点击图片，取得图片的网页地址  
