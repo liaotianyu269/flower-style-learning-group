@@ -1,9 +1,9 @@
 # vector
-vector是一个模板容器 vector<value type,n> v(初始化序列);  
+vector是一个模板容器 vector< 类型 > 标识符（最大容量，初始所有值）;  
 vector<value type>::iterator it 迭代器  
 vector.begin(),vector.end()  头和尾+1迭代器  
 vector.front(),vector.back()  第一个和最后一个元素  
-vector.at<value type>(d1,d2,...)  访问元素  
+vector.at<value type>(d1,d2,...) or vector[index]  访问元素  
 vector.data  第一个元素的指针  
 vector.push_back(),vector.insert(position,elem) 添加元素    
 vector.pop_back(),vector.erase(n or [])  删元素  
