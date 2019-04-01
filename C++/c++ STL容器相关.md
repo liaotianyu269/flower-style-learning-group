@@ -15,7 +15,7 @@ vector.empty(),vector.shrink_to_fit()
 # pair
 pair是一个模板容器 pair<value type,value type> p(初始化1，初始化2)  
 pair=make_pair(初始化1，初始化2) pair需要是定义的相应类型的pair，如下  
-pair 写法：vector<pair<int,int>>VP;  VP.push_back(make_pair<int,int>(10,50));
+pair 写法：vector<pair<int,int>>VP;  VP.push_back(make_pair<int,int>(10,50));  
 pair.first, pair,second第一个参数，第二个参数  
 
 
