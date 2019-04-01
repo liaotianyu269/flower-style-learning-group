@@ -6,6 +6,7 @@
     MAT A; A.create（rows，cols，CV_8UC1）；MAT.create成员函数  
     MAT::eye（rows,cols,CV_8UC1）;单位矩阵  
     MAT::zeros（rows，cols，CV_8UC1）;全零矩阵  
+    MAT::ones(rows,cols,CV_8UC1）；全1矩阵
     (MAT_<double>(rows,cols)<<1,2,3,4，...)；MAT_容器  
     MAT A=MAT.clone（）；MAT.clone()成员函数  
     MAT A=B.row(n) or MAT A=B.col(m) or MAT A=B.rowRange(Range()) or MAT A=B.colRange(Range()) 获取某行或某列或连续行、连续列的值 
