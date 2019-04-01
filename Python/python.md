@@ -30,12 +30,12 @@
     - tuple
         与list类似
     - dict
-        dict索引按键值查找  
+        dict索引按键值查找,比如a=dict(1:1,2:2) a[1]表示1  
 ## list，tuple,dict操作
     list() 或[]      list初始化  
     list.append(),list.extend([]),list.insert(index,elem),list.remove(value),list.pop(index),list*num  
     list.count(),list.index(),list.sort(key,reverse=False)就地排序,sorted(list)赋值排序,list.reverse(),reversed()  
-    **list=list('peal') list[1:]='ython' list[0:0]='abc' list[0:3]=[] 注：分片赋值**  
+  **list=list('peal') list[1:]='ython' list[0:0]='abc' list[0:3]=[] 注：分片赋值**  
     dict() 或{}      dict初始化  
     dict.pop(key)    删除键值对  
     dict[key]=value  增加键值对  
