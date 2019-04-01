@@ -47,6 +47,7 @@
     point.x,point.y  
 ## 4元素double类型数组  
     Scalar()  
+    Scalar::all()  
 ## Size类  
     Size，Size_<int>  Size.width,Size.height  整形的宽高。  
 ## Range类  
