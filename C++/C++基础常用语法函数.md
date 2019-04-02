@@ -17,7 +17,7 @@
 
 <details><summary>输入、输出和文件读取/写入</summary>
 
-- - cin.get()之类的  
+- cin.get()之类的  
 - 文件属性  
 - 文件名,文件路径的操作  
 - 文件读取  
