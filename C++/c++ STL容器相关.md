@@ -79,13 +79,9 @@ upper_bound(key_value)，返回第一个大于key_value的定位器
   deque.clear()|移除容器的所有数据  
   deque.erase(beg,end)|删除[beg,end)区间的数据，返回下一个数据的位置  
   deque.erase(pos)|删除pos位置的数据，返回下一个数据的位置  
-  
-  
-  
-  
 # stack  
 stack对象的默认构造  
-
+stack 是一种容器适配器，用于在LIFO（后进先出）的操作，其中元素仅从容器的一端插入和提取。  
 ```
 //stack采用模板类实现， stack对象的默认构造形式： stack <T> stkT;  如：
 stack <int> stkInt;            //一个存放int的stack容器。
@@ -108,6 +104,7 @@ stack的大小
 stack.empty();   //判断堆栈是否为空
 stack.size();        //返回堆栈的大小
 ```
-# list
+# list  
+
 # forward_list
 
