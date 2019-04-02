@@ -83,7 +83,23 @@ upper_bound(key_value)，返回第一个大于key_value的定位器
   
   
   
-# stack
+# stack  
+stack对象的默认构造  
+
+```
+//stack采用模板类实现， stack对象的默认构造形式： stack <T> stkT;  如：
+stack <int> stkInt;            //一个存放int的stack容器。
+stack <float> stkFloat;     //一个存放float的stack容器。
+stack <string> stkString;     //一个存放string的stack容器。             
+//尖括号内还可以设置指针类型或自定义类型。
+```
+stack的push与pop操作  
+```  
+stack.push(elem);   //往栈头添加元素
+stack.pop();   //从栈头移除第一个元素
+
+```
+
 # list
 # forward_list
 
