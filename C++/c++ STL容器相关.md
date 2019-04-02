@@ -99,7 +99,15 @@ stack.push(elem);   //往栈头添加元素
 stack.pop();   //从栈头移除第一个元素
 
 ```
-
+stack的数据存取  
+``` 
+stack.top();      //返回最后一个压入栈元素
+``` 
+stack的大小  
+```
+stack.empty();   //判断堆栈是否为空
+stack.size();        //返回堆栈的大小
+```
 # list
 # forward_list
 
