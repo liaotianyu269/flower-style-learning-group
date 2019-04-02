@@ -46,6 +46,10 @@ upper_bound(key_value)，返回第一个大于key_value的定位器
   deque|构造函数   
   push_back|在当前的最后一个元素之后，在deque容器的末尾添加一个新元素  
   push_front|在deque容器的开始位置插入一个新的元素，位于当前的第一个元素之前  
+  pop_back|删除deque容器中的最后一个元素，有效地将容器大小减少一个  
+  pop_front|删除deque容器的第一个元素，有效地减小其大小  
+  emplace_front|在deque的开头插入一个新的元素，就在其当前的第一个元素之前  
+  emplace_back|在deque的末尾插入一个新的元素，紧跟在当前的最后一个元素之后  
   
   
   
