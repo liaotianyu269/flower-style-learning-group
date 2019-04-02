@@ -20,6 +20,73 @@
 - cin.get()之类的  
 - 文件属性  
 - 文件名,文件路径的操作  
+  struct \_finddata_t 结构体用来存储文件信息，在<io.h>头文件中：
+  ```C++
+  struct \_finddata_t{
+        unsigned attrib;            \\_A_SUBDIR 文件夹 其他选项不怎么用
+        char name[\_MAX\_NAME];     \\文件名
+         time_t time_create;        \\这些不常用
+         time_t time_access;
+         time_t time_write;
+         \_fsize_t size;
+         }
+  ```
+  文件路径操作\_findafirst(),\_findnext(),\_findclose():
+  ```
+  long _findfirst(char * path,struct _finddata_t * fileoinfo)  
+  返回long型的句柄，查找相应路径path下的第一个文件，path支持通配符(*.jpg表示path下的所有.jpg文件)并将文件信息存储到fileinfo中  
+  成功返回一个long型的数值，不成功返回-1  
+  int _findnext(long handle,struct _finddata_t * fileinfo)  
+  从句柄所指文件下一个文件开始搜索，将下一个文件信息存储到fileinfo中  
+  成功返回0，不成功返回-1  
+  int _findclose(long handle)  
+  关闭句柄，停止搜索
+  成功返回0，不成功返回-1  
+  ```
+  <details><summary>_finddata_t及其操作的用法</summary>  
+  
+  写一个遍历文件夹中.jpg文件,并将文件路径存储在.txt文件中，简单示例:
+  ```
+  include<io.h>  
+  include<vector>  
+  include<iostream>  
+  include<fstream>  
+  
+  void GetAllFiles(char * path,vector<char*> file){  
+      long handle;  
+      _finddata_t fileinfo;  
+      if((handle=_findfirst(path+"\\"+"*.jpg",&fileinfo))!=-1){  
+      do{  
+       if (fileinfo.attrib==_A_SUBDIR）  
+       {  
+          GetAllFiles(path+"\\"+fileinfo.name,file);  
+       }  
+      else  
+      {  
+          file.push_back(path.append("\\").append(fileinfo.name));  
+      }  
+      }  
+      while(_findnext(handle,fileinfo==0);  
+      _findclose(handle);  
+      }  
+  void OutputFileName(vector<char*> file,char* filepath){  
+      ofstream outfile.open(filepath);  
+      vector<char*>::iterator it=file.begin();  
+      for(;it!=file.end(),it++){  
+          outfile<<*it<<endl;  
+          }    
+      outfile.close();  
+    }  
+  void main(){  
+      char * RootPath="D:\\Image"  
+      char * FilePath="D:\\jpgfile.txt"   
+      vector<char *> ImagePath;  
+      GetAllFiles(RootPath,ImagePath);  
+      OutputFileName(ImagePath,FilePath);  
+      }  
+  ```
+  </details>
+  
 - 文件读取  
 - 文件写入  
 ...  
