@@ -18,23 +18,25 @@
 <details><summary>输入、输出和文件读取/写入</summary>
 
 - cin.get()之类的  
+- printf  
+- sprintf  
 - 文件属性  
 - 文件名,文件路径的操作  
-  struct \_finddata_t 结构体用来存储文件信息，在<io.h>头文件中：
-  ```C++
-  struct \_finddata_t{
+  struct \_finddata_t 结构体用来存储文件信息，在<io.h>头文件中：  
+  ```C++  
+  struct _finddata_t{  
         unsigned attrib;            \\_A_SUBDIR 文件夹 其他选项不怎么用
-        char name[\_MAX\_NAME];     \\文件名
-         time_t time_create;        \\这些不常用
-         time_t time_access;
-         time_t time_write;
-         \_fsize_t size;
-         }
-  ```
-  文件路径操作\_findafirst(),\_findnext(),\_findclose():
+        char name[_MAX_NAME];     \\文件名
+        time_t time_create;        \\这些不常用
+        time_t time_access;  
+        time_t time_write;  
+        _fsize_t size;  
+         }  
+  ```  
+  文件路径操作\_findafirst(),\_findnext(),\_findclose():  
   ```
   long _findfirst(char * path,struct _finddata_t * fileoinfo)  
-  返回long型的句柄，查找相应路径path下的第一个文件，path支持通配符(*.jpg表示path下的所有.jpg文件)并将文件信息存储到fileinfo中  
+  path支持通配符(*.jpg表示path下的所有.jpg文件)并将文件信息存储到fileinfo中  
   成功返回一个long型的数值，不成功返回-1  
   int _findnext(long handle,struct _finddata_t * fileinfo)  
   从句柄所指文件下一个文件开始搜索，将下一个文件信息存储到fileinfo中  
@@ -45,33 +47,45 @@
   ```
   <details><summary>_finddata_t及其操作的用法</summary>  
   
-  写一个遍历文件夹中.jpg文件,并将文件路径存储在.txt文件中，简单示例:
-  ```
+  写一个遍历文件夹中.jpg文件,并将文件路径存储在.txt文件中，简单示例:  
+  ```  
   include<io.h>  
   include<vector>  
   include<iostream>  
   include<fstream>  
+  #include<string>
   
-  void GetAllFiles(char * path,vector<char*> file){  
-      long handle;  
+  void GetAllFiles(char * path,vector<string>& file){  
+      intptr_t handle;  
       _finddata_t fileinfo;  
-      if((handle=_findfirst(path+"\\"+"*.jpg",&fileinfo))!=-1){  
+      char temppath=[100];
+      strcpy(temppath,path);  
+      strcat(temppath,"\\");  
+      if((handle=_findfirst(temppath,&fileinfo))!=-1){  
       do{  
+        if(strcmp(fileinfo.name,".")!=0 && strcmp(fileinfo.name,"..")!=0){
+        char temp[100];
        if (fileinfo.attrib==_A_SUBDIR）  
        {  
-          GetAllFiles(path+"\\"+fileinfo.name,file);  
+          strcpy(temp,path);  
+          strcat(temp,"\\");
+          strcat(temp,fileinfo.name);
+          GetAllFiles(temp,file);  
        }  
       else  
       {  
-          file.push_back(path.append("\\").append(fileinfo.name));  
+          strcpy(temp,path);  
+          strcat(temp,"\\");
+          strcat(temp,fileinfo.name);
+          file.push_back();  
       }  
+      } while(_findnext(handle,fileinfo==0);  
+      _findclose(handle);    
+      }
       }  
-      while(_findnext(handle,fileinfo==0);  
-      _findclose(handle);  
-      }  
-  void OutputFileName(vector<char*> file,char* filepath){  
-      ofstream outfile.open(filepath);  
-      vector<char*>::iterator it=file.begin();  
+  void OutputFileName(const vector<string>& file,char* filepath){  
+      ofstream outfile(filepath);  
+      vector<string>::iterator it=file.begin();  
       for(;it!=file.end(),it++){  
           outfile<<*it<<endl;  
           }    
@@ -80,7 +94,7 @@
   void main(){  
       char * RootPath="D:\\Image"  
       char * FilePath="D:\\jpgfile.txt"   
-      vector<char *> ImagePath;  
+      vector<string> ImagePath;  
       GetAllFiles(RootPath,ImagePath);  
       OutputFileName(ImagePath,FilePath);  
       }  
@@ -88,8 +102,34 @@
   </details>
   
 - 文件读取  
+  <details><summary>文件读取定义、读取、文件读取关闭</summary>
+  
+  ```C++
+  ifstream infile("path") 
+  //ifstream infile;
+  //infile.open("path",ios::in|ios::binary|ios::ate) //ios::ate？
+  infile.isopen() //打开是否成功
+  while(!infile.eof()){
+  infile.getline(buffer,100);//按行读取
+  }
+  infile.close();  
+  ```
+  对于如何读取有多种读取方式：  
+  </details>
 - 文件写入  
-...  
+  <details><summary>文件写入定义、写入、文件写入关闭</summary>
+  
+  ```C++
+  ostream outfile("path") 
+  //ostream outfile;
+  //outfile.open("path",ios::out|ios::app|ios::trunc|ios::binary)
+  outfile.isopen()   //打开是否成功
+  outfile<<buffer<<endl; 
+  outfile.close();
+  ```
+  </details>
+- 文件流的状态标志符  
+
 </details>
 
 <details><summary>函数</summary>
@@ -120,7 +160,9 @@
 <details><summary>字符串操作</summary>
   
 - string类  
-- 
+- strcmp(str1,str2) 相等返回0
+- strcpy  复制字符串  
+- strcat  连接字符串  
 ...
 </details>
 
