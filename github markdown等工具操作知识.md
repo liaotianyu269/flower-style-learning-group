@@ -25,6 +25,14 @@ https://www.cnblogs.com/jaesun/p/Markdown-ji-chu-yu-fa.html#%E8%84%9A%E6%B3%A8fo
 ## 加粗、斜体  
 用\*\* \*\*把内容框起来，**来jia粗我**  
 \* \* 把内容框起来，*来xie我鸭*  
+<details><summary>三角下拉收缩内容功能</summary>
+    
+>`<details><summary>XXXXXXX</summary>`作为标题  
+与正文空一行  
+xxxxx  
+`</details>`作为结尾  
+</details>   
+
 ## 引用文本  
 用\>加在文本的前面，必须在行首  
 >wo shi yinyong de wenben  
