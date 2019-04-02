@@ -73,6 +73,15 @@ upper_bound(key_value)，返回第一个大于key_value的定位器
   deque.assign(n,ele)|deque的赋值  
   deque& operator=(const deque &deq)|deque的赋值 
   deque.swap(deq)|将vec与本身的元素互换  
+  deque.insert(pos,elem)|在pos位置插入一个elem元素的拷贝，返回新数据的位置  
+  deque.insert(pos,n,elem)|在pos位置插入n个elem数据，无返回值  
+  deque.insert(pos,beg,end)|在pos位置插入[beg,end)区间的数据，无返回值  
+  deque.clear()|移除容器的所有数据  
+  deque.erase(beg,end)|删除[beg,end)区间的数据，返回下一个数据的位置  
+  deque.erase(pos)|删除pos位置的数据，返回下一个数据的位置  
+  
+  
+  
   
 # stack
 # list
