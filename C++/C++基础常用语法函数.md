@@ -1,7 +1,10 @@
-计时函数：
+<details><summary>计时函数：</summary>
+
 getTickCount()
 getTickFrequency()
 如果想提高精度，QueryPerformanceCounter和QueryPerformanceFrequency可以获得低于1ms的精度。
+
+</detailes>
 
 类型转换：
 static_cast<value type>()   一般基础类型的转换时没问题的
