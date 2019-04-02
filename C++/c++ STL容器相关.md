@@ -39,10 +39,14 @@ lower_bound(key_value) ，返回第一个大于等于key_value的定位器
 upper_bound(key_value)，返回第一个大于key_value的定位器  
 # deque 
   deque(双端队列)是double-ended queue的一个不规则缩写，deque是具有动态大小的序列容器，可以在两端（前端或后端）扩展或收缩。 
-  双端队列，支持快速访问。在头尾位置插入/删除速度很快。 
+  双端队列，支持快速访问。在头尾位置插入/删除速度很快。  
+  
   方法  | 含义  
-  ------|---------  
-  deque |构造函数  
+  
+  ------ | ---------  
+  
+  deque | 构造函数   
+  
   
   
 # stack
