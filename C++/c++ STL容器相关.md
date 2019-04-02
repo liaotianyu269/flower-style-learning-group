@@ -39,8 +39,14 @@ lower_bound(key_value) ，返回第一个大于等于key_value的定位器
 upper_bound(key_value)，返回第一个大于key_value的定位器  
 # deque 
   deque(双端队列)是double-ended queue的一个不规则缩写，deque是具有动态大小的序列容器，可以在两端（前端或后端）扩展或收缩。 
-  双端队列，支持快速访问。在头尾位置插入/删除速度很快。  
-  
+  双端队列，支持快速访问。在头尾位置插入/删除速度很快。 
+  deque在接口上和vector很相似，在许多地方可以直接替换  
+  deque可以随机存取元素，支持索引值直接存取，使用[]或者是at()方法  
+  deque的头部和尾部添加和移除元素都非常快速，但是在中部插入元素或移除元素比较费时。  
+  deque的构造 和 vector基本相同  
+  ```
+  deque<int>de;
+  ```
   方法|含义  
   ------|---------  
   deque|构造函数   
@@ -50,9 +56,21 @@ upper_bound(key_value)，返回第一个大于key_value的定位器
   pop_front|删除deque容器的第一个元素，有效地减小其大小  
   emplace_front|在deque的开头插入一个新的元素，就在其当前的第一个元素之前  
   emplace_back|在deque的末尾插入一个新的元素，紧跟在当前的最后一个元素之后  
-  
-  
-  
+  deque.at[index]|返回索引index所指的数据，如果越界，会跑出out_of_range   
+  deque[index]|返回index所指的数据，越界的话，不会抛出异常  
+  deque.front()|返回第一个元素  
+  deque.back()|返回最后一个元素  
+  deque.begin()|返回容器中第一个元素的迭代器  
+  deque.end()|返回容器中最后一个元素之后的迭代器  
+  deque.rbegin()|返回容器中倒数第一个元素的迭代器 
+  deque.rend()|返回容器中倒数最后一个元素之后的迭代器  
+  deque(beg,end)|构造函数将区间[beg,end)区间的元素拷贝给本身  
+  deque(n,ele)|构造函数将n个ele拷贝给本身  
+  deque(const deque &deq)|拷贝构造函数  
+  deque.assign(beg,end)|deque的赋值   
+  deque.assign(n,ele)|deque的赋值  
+  deque& operator=(const deque &deq)|deque的赋值 
+  deque.swap(deq)|将vec与本身的元素互换  
   
 # stack
 # list
