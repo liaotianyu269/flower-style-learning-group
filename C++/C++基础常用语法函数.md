@@ -167,6 +167,7 @@
 - strcmp(str1,str2) 相等返回0
 - strcpy  复制字符串  
 - strcat  连接字符串  
+- strcnmp 比较两个字符串前n位
 ...
 </details>
 
