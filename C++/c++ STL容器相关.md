@@ -20,8 +20,43 @@ VP.push_back(make_pair<int,int>(10,50));
 ```
 pair.first, pair,second第一个参数，第二个参数  
 pair 比较操作数，可以用== != < <= > >=比较大小，比较规则是先以first的大小作为标准，只有当first相等时才取判别second的大小  
-# map&multiimap
-map和multimap。在存储数据时，会根据pair<>的first成员进行排序。map的key,与value是一对一的关系，multimap,一个key,可以有多个value.
+# map&multimap  
+map是key不重复的以key-value对为元素的有序容器，key,与value是一对一的关系,自动根据key排序  
+<details><summary>map操作</summary>
+  
+    ```C++
+    map<value type,value type> m;  //创建三种方式,insert，数组形式
+    m.insert(pair<valuetype,valuetype>(a,b));
+    m.insert(map<valuetype,valuetype>::value_type(a,b));//insert重复键值，value不被覆盖,返回插入位置迭代器和成功标识
+    m.[key]=value;//赋值重复键值，value被覆盖
+    map.size(),map.begin(),map.end(),map.empty(),map.rend(),map.rbegin()
+    //元素个数，第一个迭代器，尾迭代器+1，是否为空，最后一个迭代器，第一个迭代器-1.
+    map遍历,可以用数组形式或迭代器。
+    //map<valuetype,valuetype>::iterator 或reverse_iterator，注意正向和反向迭代器区别。
+    //反向迭代器从指定位置按-1的规则遍历，寄reverse_iterator++,相当于从a的位置到a-1的位置。
+    map.find(),map.lower_bound(),map.upper_bound(),map.equal_range().
+    //返回相应值的迭代器，未找到返回end().lower>=,upper>，equal_range返回一对迭代器pair<lower_bound,upper_bound>.
+    map.erase(迭代器或key),map.clear()//erase可以删一个或连续几个,clear清空
+    map.swap(map)//两个map元素全部交换
+</details>
+multimap是key可重复的以key-value对为元素的有序容器。一个key,可以有多个value，自动根据key排序
+<details><summary>multimap操作</summary>
+    
+    ```C++
+    multimap<value type,value type> m;  //创建，只能用insert，不能数组形式
+    m.insert(pair<valuetype,valuetype>(a,b));//insert重复键值，会被重复添加,返回插入位置迭代器和成功标识
+    m.insert(multimap<valuetype,valuetype>::value_type(a,b);
+    multimap.size(),multimap.begin(),multimap.end(),multimap.empty(),multimap.rend(),multimap.rbegin()
+    //元素个数，第一个迭代器，尾迭代器+1，是否为空，最后一个迭代器，第一个迭代器-1.
+    map遍历,只能用迭代器。
+    //multimap<valuetype,valuetype>::iterator 或reverse_iterator，注意正向和反向迭代器区别。
+    //反向迭代器从指定位置按-1的规则遍历，寄reverse_iterator++,相当于从a的位置到a-1的位置。
+    multimap.find(),multimap.lower_bound(),multimap.upper_bound(),multimap.equal_range().
+    //返回第一个相应值的迭代器，未找到返回end().lower>=,upper>，equal_range返回一对迭代器pair<lower_bound,upper_bound>.
+    map.erase(迭代器或key),map.clear()//erase可以删一个或连续几个,clear清空
+    map.swap(map)//两个map元素全部交换
+    multi.count()//计数
+</details>
 # set&multiset
 set是一个自动排序的无重复元素的容器，set中的值不能直接被改变。  
 multiset是一个自动排序的可重复元素的容器。  
