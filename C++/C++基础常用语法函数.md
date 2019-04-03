@@ -48,7 +48,7 @@
   <details><summary>_finddata_t及其操作的用法</summary>  
   
   写一个遍历文件夹中.jpg文件,并将文件路径存储在.txt文件中，简单示例:  
-  ```  
+  ```C++  
   include<io.h>  
   include<vector>  
   include<iostream>  
