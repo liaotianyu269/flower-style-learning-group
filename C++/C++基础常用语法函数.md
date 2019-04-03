@@ -31,7 +31,7 @@
         time_t time_access;  
         time_t time_write;  
         _fsize_t size;  
-         }  
+         }
   ```  
   文件路径操作\_findafirst(),\_findnext(),\_findclose():  
   ```
