@@ -173,28 +173,55 @@
 
 <details><summary>字符串操作</summary>
   
-字符串主要了解C语言字符串chars，C++字符串string。两者在操作上有区别，注意区分。  
+**字符串主要了解C语言字符串chars，C++字符串string。两者在操作上有区别，注意区分。  
+在程序中能使用C++字符串就使用，除非万不得已不选用c_string。**  
+
 char数组一定要初始化。。  
 ep:  
-char s[100]={0};//初始化为全0；
-char s2[100];
+char s[100]={0};//初始化为全0； 
+char s2[100];  
 memset(s2,0,sizeof(s2));//初始化全零。  
 结构体也要初始化，一定要养成好习惯！！！！  
-struct ss{
-...
-}sy;
-memset(&sy,0,sizeof(sy));
-
-- string类  
-- strcmp(str1,str2) 相等返回0
-- strcpy  复制字符串  
-- strcat  连接字符串  
-- strcnmp 比较两个字符串前n位  
+```
+struct ss{    
+}sy;  
+memset(&sy,0,sizeof(sy));  
+```  
 ## memcpy与strcpy的区别  
 strcpy只能拷贝字符串，memcpy可以拷贝包括字符串以外的数据，比如结构体。strcpy遇到\0拷贝结束，这很容易造成待拷贝的函数内存溢出。  
 memcpy用来在内存中复制数据，由于字符串是以 \0结尾的，所以对于在数据中包含 \0的数据只能用memcpy。  
-Strncpy和memcpy很相似，只不过它在一个终止的空字符处停止。当n>strlen(s1)时，给s2不够数的空间里填充“\0”；当n<=strlen(s1)时，s2是没有结束符“\0”的。  
-...
+Strncpy和memcpy很相似，只不过它在一个终止的空字符处停止。当n>strlen(s1)时，  
+给s2不够数的空间里填充“\0”；当n<=strlen(s1)时，s2是没有结束符“\0”的。  
+- string类  
+```
+string str1(str2,position,len)//创建string，给出c++字符串，起始位置，长度
+string str1(char[],len)//创建string，给出c字符串，长度
+string str1(str2.position1,str2.position2)//创建string，给出c++字符串，字符串的起始位置，终止位置  
+string str1(num,c)//创建string，赋值n个c字符
+string.npos or string::npos//表示字符串最大容量，npos类型string::为size_type
+```
+<details><summary>string的操作</summary>
+     
+str1.assign(str2,position，len) or str1.assign(str2,len) or strcpy(str1,str2)//assign相当于赋值'='  
+str1.swap(str2)//字符串完全交换  
+str1+=str2,str1.append(str2,position,len),str1.append(str2,len),str1.push_back('c单字符')//追加与assign类似  
+str1.insert(position,"str2")//指定位置插入  
+str1.erase(position,len)//从position开始后面len个字符都被删掉  
+strcmp(str1,str2),str1.compare(str2) //相等返回0，可以用'=='  
+strcnmp //比较两个字符串前n位?  
+str1.replace(position1,position2,"str2")//替换，自pos1到pos2的位置被替换  
+strcat(str1,str2),str1+=str2,str1=str1+str2 //连接字符串,可以用'+'     
+str1.at(position),str1[position]//访问某一字符  
+str1.c_str()//返回一个以‘\0’结尾的字符数组  
+str1.copy()//把字符串的内容复制或写入既有的c_string或字符数组内  
+str1.data()//以字符数组的形式返回字符串内容，但并不添加’\0’  
+str1.substr(position,len)//返回子字符串,自position开始len个长度  
+str1.find('str2',position)//自position位置开始查找'str2',返回第一次出现位置  
+str1.size(),str1.length(),str1.capacity(),str1.max_size()  
+str1.begin(),str1.end()  
+
+</details>
+
 </details>
 
 <details><summary>指针，引用，const</summary>
