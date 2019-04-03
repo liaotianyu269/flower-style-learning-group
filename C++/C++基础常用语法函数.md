@@ -163,6 +163,17 @@
 <details><summary>字符串操作</summary>
   
 字符串主要了解C语言字符串chars，C++字符串string。两者在操作上有区别，注意区分。  
+char数组一定要初始化。。  
+ep:  
+char s[100]={0};//初始化为全0；
+char s2[100];
+memset(s2,0,sizeof(s2));//初始化全零。  
+结构体也要初始化，一定要养成好习惯！！！！  
+struct ss{
+...
+}sy;
+memset(&sy,0,sizeof(sy));
+
 - string类  
 - strcmp(str1,str2) 相等返回0
 - strcpy  复制字符串  
