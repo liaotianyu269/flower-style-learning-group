@@ -107,7 +107,7 @@
   ```C++
   ifstream infile("path") 
   //ifstream infile;
-  //infile.open("path",ios::in|ios::binary|ios::ate) //ios::ate？
+  //infile.open("path",ios::in|ios::binary|ios::ate) //在读取时ios::ate定位到文件末尾
   infile.isopen() //打开是否成功
   while(!infile.eof()){
   infile.getline(buffer,100);//按行读取
@@ -115,6 +115,8 @@
   infile.close();  
   ```
   对于如何读取有多种读取方式：  
+  按行读取getline(infile,buffer);//最常用    
+  getline(infile,buffer,"!");//读取一行，并以"!"作为结尾  
   </details>
 - 文件写入  
   <details><summary>文件写入定义、写入、文件写入关闭</summary>
@@ -122,7 +124,8 @@
   ```C++
   ostream outfile("path") 
   //ostream outfile;
-  //outfile.open("path",ios::out|ios::app|ios::trunc|ios::binary)
+  //outfile.open("path",ios::out|ios::app|ios::trunc|ios::binary|ios::ate)  
+  //ios::app追加写入，ios::trunc删除文件再重新创建，ios::ate清空文件  
   outfile.isopen()   //打开是否成功
   outfile<<buffer<<endl; 
   outfile.close();
@@ -159,6 +162,7 @@
 
 <details><summary>字符串操作</summary>
   
+字符串主要了解C语言字符串chars，C++字符串string。两者在操作上有区别，注意区分。  
 - string类  
 - strcmp(str1,str2) 相等返回0
 - strcpy  复制字符串  
