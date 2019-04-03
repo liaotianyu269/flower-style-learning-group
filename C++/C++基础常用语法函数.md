@@ -189,7 +189,11 @@ memset(&sy,0,sizeof(sy));
 - strcmp(str1,str2) 相等返回0
 - strcpy  复制字符串  
 - strcat  连接字符串  
-- strcnmp 比较两个字符串前n位
+- strcnmp 比较两个字符串前n位  
+## memcpy与strcpy的区别  
+strcpy只能拷贝字符串，memcpy可以拷贝包括字符串以外的数据，比如结构体。strcpy遇到\0拷贝结束，这很容易造成待拷贝的函数内存溢出。  
+memcpy用来在内存中复制数据，由于字符串是以 \0结尾的，所以对于在数据中包含 \0的数据只能用memcpy。  
+Strncpy和memcpy很相似，只不过它在一个终止的空字符处停止。当n>strlen(s1)时，给s2不够数的空间里填充“\0”；当n<=strlen(s1)时，s2是没有结束符“\0”的。  
 ...
 </details>
 
