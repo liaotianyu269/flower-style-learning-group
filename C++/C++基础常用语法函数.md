@@ -49,55 +49,66 @@
   
   写一个遍历文件夹中.jpg文件,并将文件路径存储在.txt文件中，简单示例:  
   ```C++  
-  include<io.h>  
-  include<vector>  
-  include<iostream>  
-  include<fstream>  
+  #include<io.h>
+  #include<vector>
+  #include<iostream>
+  #include<fstream>
   #include<string>
-  
-  void GetAllFiles(char * path,vector<string>& file){  
-      intptr_t handle;  
-      _finddata_t fileinfo;  
-      char temppath=[100];
-      strcpy(temppath,path);  
-      strcat(temppath,"\\");  
-      if((handle=_findfirst(temppath,&fileinfo))!=-1){  
-      do{  
-        if(strcmp(fileinfo.name,".")!=0 && strcmp(fileinfo.name,"..")!=0){
-        char temp[100];
-       if (fileinfo.attrib==_A_SUBDIR）  
-       {  
-          strcpy(temp,path);  
-          strcat(temp,"\\");
-          strcat(temp,fileinfo.name);
-          GetAllFiles(temp,file);  
-       }  
-      else  
-      {  
-          strcpy(temp,path);  
-          strcat(temp,"\\");
-          strcat(temp,fileinfo.name);
-          file.push_back();  
-      }  
-      } while(_findnext(handle,fileinfo==0);  
-      _findclose(handle);    
+
+  using namespace std;
+
+  void GetAllFiles(char * path, vector<string>& file)
+  {
+    intptr_t handle;
+    _finddata_t fileinfo;
+    char temppath[100];
+    strcpy_s(temppath, path);
+    strcat_s(temppath, "\\*");
+    if ((handle = _findfirst(temppath, &fileinfo)) != -1)
+    {
+      do
+      {
+        if (strcmp(fileinfo.name, ".") != 0 && strcmp(fileinfo.name, "..") != 0)
+        {
+          char temp[100];
+          if (fileinfo.attrib == _A_SUBDIR)
+          {
+            strcpy_s(temp, path);
+            strcat_s(temp, "\\");
+            strcat_s(temp, fileinfo.name);
+            GetAllFiles(temp, file);
+          }
+          else
+          {
+            strcpy_s(temp, path);
+            strcat_s(temp, "\\");
+            strcat_s(temp, fileinfo.name);
+            file.push_back(temp);
+          }
+        }
+      } while (_findnext(handle, &fileinfo) == 0);
+      _findclose(handle);
+    }
+  }
+    void OutputFileName(vector<string>& file, char* filepath)
+    {
+      ofstream outfile(filepath);
+      vector<string>::iterator it = file.begin();
+      for (; it != file.end(); it++)
+      {
+        cout << *it << endl;
+        outfile << *it << endl;
       }
-      }  
-  void OutputFileName(const vector<string>& file,char* filepath){  
-      ofstream outfile(filepath);  
-      vector<string>::iterator it=file.begin();  
-      for(;it!=file.end(),it++){  
-          outfile<<*it<<endl;  
-          }    
-      outfile.close();  
-    }  
-  void main(){  
-      char * RootPath="D:\\Image"  
-      char * FilePath="D:\\jpgfile.txt"   
-      vector<string> ImagePath;  
-      GetAllFiles(RootPath,ImagePath);  
-      OutputFileName(ImagePath,FilePath);  
-      }  
+      outfile.close();
+    }
+    void main(){
+      char * RootPath = "C:\\Users\\12267\\Desktop\\Face";
+      char * FilePath = "C:\\Users\\12267\\Desktop\\liaodi.txt";
+      vector<string> ImagePath;
+      GetAllFiles(RootPath, ImagePath);
+      OutputFileName(ImagePath, FilePath);
+      system("pause");
+    }
   ```
   </details>
   
