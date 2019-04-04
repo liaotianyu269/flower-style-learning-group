@@ -8,9 +8,20 @@
 - 数组  
 - 结构体，共用体  
 - 枚举  
-- if...elif...if      if()
-- for,while,do...while...  for();while();do{}while(); 
-- switch,break,continue  switch(){case X:}
+- if...else if...else  
+  if(表达式){}  
+  else if(){}  
+  else{}  
+- for,while,do...while...  
+  for(表达式;表达式;表达式){}: or for(auto item : XXX){};//新写法比较简便
+  while(表达式){};  
+  do{}while(表达式);   
+- switch,break,continue  
+  switch(表达式)
+  {case X:{};
+   case Y:{};
+   default : {};
+  }
 - ?:条件表达式  
 - #define,typedef  
 </details>
