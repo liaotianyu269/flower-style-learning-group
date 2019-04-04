@@ -1,4 +1,4 @@
-<details><summary>基础语法：很简单的内容，可以忽略跳过。但对这部分内容需要胆大心细</summary>
+<details><summary>基础语法：很简单的内容，可以忽略跳过。</summary>
   
 - main()函数,include,using,cout,cin,return  
 - 头文件(.hpp)  
@@ -280,7 +280,7 @@ str1.begin(),str1.end()
 - 按位运算符  
 - 编程思想  
 ...
-</details>
+
 
 计时函数：
 getTickCount()
@@ -303,3 +303,5 @@ sizeof操作符的结果类型是size_t，该类型保证能容纳实现所建�
 它的意义大致是“适于计量内存中可容纳的数据项目个数的无符号整数类型”。所以，它在数组下标和内存管理函数之类的地方广泛使用。  
 
 assert()
+
+</details>
