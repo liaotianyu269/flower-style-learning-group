@@ -10,7 +10,7 @@
 - 枚举  
 - if...else if...else  
   if(表达式){}  
-  else if(){}  
+  else if(表达式){}  
   else{}  
 - for,while,do...while...  
   for(表达式;表达式;表达式){}: or for(auto item : XXX){};//新写法比较简便  
@@ -23,6 +23,7 @@
    default : {}  
   }  
 - ?:条件表达式  
+  表达式?A:B  //表达式为真则返回A，否则返回B  
 - #define,typedef  
 </details>
 
