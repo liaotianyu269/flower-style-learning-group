@@ -10,5 +10,5 @@
 例如：文件名称为 opencv.md，则在当前目录下创建了一个opencv.md文件  
 例如：文件名称为C++/opencv.md，则在当前目录下的C++文件夹下创建了opencv.md文件  
 ## 编辑，提交文件
-![pic1]()
+![pic1](https://github.com/liaotianyu269/flower-style-learning-group/blob/master/%E6%8D%95%E8%8E%B7.PNG)
 ![pic2](https://github.com/liaotianyu269/flower-style-learning-group/blob/master/%E6%8F%90%E4%BA%A4%E6%96%87%E4%BB%B6.PNG)
