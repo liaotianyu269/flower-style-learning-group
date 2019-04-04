@@ -185,5 +185,28 @@ list是实现的双向链表
        cout<<*iter;  
     }  
 ```  
-# forward_list
+# forward_list  
+forward_list容器以单链表的形式存储元素。forward_list的模板定义在头文件forword_list中。forward_list和list最主要的区别是：它不能反向遍历元素；只能从头到尾遍历。  
+forward_list 的单向链接性也意味着它会有一些其他的特性：  
+无法使用反向迭代器。只能从它得到const或non-const前向迭代器，这些迭代器都不能解引用，只能自增；  
+没有可以返回最后一个元素引用的成员函数back();只有成员函数front();  
+因为只能通过自增前面元素的迭代器来到达序列的终点，所以push_back()、pop_back()、emplace_back()也无法使用。  
+
+forward_list 的操作比 list 容器还要快，而且占用的内存更少，尽管它在使用上有很多限制，但仅这一点也足以让我们满意了。  
+
+forward_list 容器的构造函数的使用方式和 list 容器相同。forward_list 的迭代器都是前向迭代器。它没有成员函数 size()，因此不能用一个前向迭代器减去另一个前向迭代器，但是可以通过使用定义在头文件 iterator 中的 distance() 函数来得到元素的个数。例如：  
+```
+std::forward_list<std::string> my_words {"three", "six", "eight"};  
+auto count = std::distance(std::begin(my_words),std::end(my_words));  
+// Result is 3  
+```  
+distance() 的第一个参数是一个开始迭代器，第二个参数是一个结束迭代器，它们指定了元素范围。当需要将前向迭代器移动多个位置时，advance() 就派上了用场。例如：  
+```
+std::forward_list<int> data {10, 21, 43, 87, 175, 351};  
+auto iter = std::begin(data);  
+size_t n {3};  
+std::advance(iter, n);  
+std::cout << "The " << n+1 << "th element is n << *iter << std::endl;  
+// Outputs 87  
+```  
 
