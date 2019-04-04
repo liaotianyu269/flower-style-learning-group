@@ -103,4 +103,4 @@ int c=a+b
 在相应的文档位置按如下方式添加图片  
 `命令是这样的: ![图片的注释内容]（图片的网页地址）`  
 这里有一个显示图片的教程，https://blog.csdn.net/Cassie_zkq/article/details/79968598  
-![显示图片](https://github.com/liaotianyu269/--/blob/master/%E6%8D%95%E8%8E%B7.PNG)  
+![显示图片](https://github.com/liaotianyu269/flower-style-learning-group/blob/master/%E5%9B%BE%E4%BE%8B/%E6%8D%95%E8%8E%B7.PNG)  
