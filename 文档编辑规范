@@ -5,4 +5,4 @@
 比如，需要写一些功能或工具的应用背景或理论背景。如该函数是在什么库里，作用是什么，或常用在什么场景之类。一句话就搞定。  
 比如，如果人多，想要编辑同一个文档，最好先知会一声，如果同时编辑，在保存的时候，有可能只确保其中一人编辑有效。  
      在保存时，如果多人同时编辑，系统会提示，复制自己的内容在txt文档，撤销编辑，再重新编辑就可以了。
-    ![](https://github.com/liaotianyu269/flower-style-learning-group/blob/master/%E7%BC%96%E8%BE%91.png)  
+![](https://github.com/liaotianyu269/flower-style-learning-group/blob/master/%E7%BC%96%E8%BE%91.png)  
