@@ -85,7 +85,8 @@ upper_bound(key_value)，返回第一个大于key_value的定位器
 # queue
 # priority_queue  
 priority_queue<Type, Container, Functional>，其中Type 为数据类型，Container为保存数据的容器，Functional 为元素比较方式。  
-Container必须是用数组实现的容器，比如vector,deque等等，但不能用 list。STL里面默认用的是vector。  
+Container必须是用数组实现的容器，比如vector,deque等等，但不能用 list。STL里面默认用的是vector。 
+
 # deque 
   deque(双端队列)是double-ended queue的一个不规则缩写，deque是具有动态大小的序列容器，可以在两端（前端或后端）扩展或收缩。 
   双端队列，支持快速访问。在头尾位置插入/删除速度很快。 
