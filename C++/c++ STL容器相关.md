@@ -74,7 +74,6 @@ set\multiset.count( a )：set能返回０或者１，multiset是有多少个返�
 Set和multiset都是引用<set>头文件,复杂度都是logn  
 set.insert(),set.erase(),set.find(elem),set.begin(),set.end(),set.size(),set.max_size().set.empty(),set.clear()，set.count()  
 set.lower_bound(),set.upper_bound()  同vector的相应功能  
-find(x)是返回的是x的值，如果x没有在set中则会输出end()  
 insert(key_value); 将key_value插入到set中  
 返回值是pair<set<int>::iterator,bool>，bool标志着插入是否成功，而iterator代表插入的位置，  
 若key_value已经在set中，则iterator表示的key_value在set中的位置。  
