@@ -8,9 +8,9 @@
 - 数组  
 - 结构体，共用体  
 - 枚举  
-- if...elif...if  
-- for,while,do...while...  
-- switch,break,continue  
+- if...elif...if      if()
+- for,while,do...while...  for();while();do{}while(); 
+- switch,break,continue  switch(){case X:}
 - ?:条件表达式  
 - #define,typedef  
 </details>
