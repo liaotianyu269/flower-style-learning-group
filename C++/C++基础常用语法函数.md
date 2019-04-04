@@ -18,9 +18,9 @@
   do{}while(表达式);   
 - switch,break,continue  
   switch(表达式)  
-  {case X:{};  
-   case Y:{};  
-   default : {};  
+  {case X:{}  
+   case Y:{}  
+   default : {}  
   }  
 - ?:条件表达式  
 - #define,typedef  
