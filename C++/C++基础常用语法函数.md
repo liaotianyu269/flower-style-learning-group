@@ -25,6 +25,9 @@
 - ?:条件表达式  
   表达式?A:B  //表达式为真则返回A，否则返回B  
 - #define,typedef  
+- 编程规范  
+  用缩进来表示代码层级关系 
+  {}水平距离对齐  
 </details>
 
 <details><summary>输入、输出和文件读取/写入</summary>
