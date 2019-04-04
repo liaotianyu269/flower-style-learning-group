@@ -13,15 +13,15 @@
   else if(){}  
   else{}  
 - for,while,do...while...  
-  for(表达式;表达式;表达式){}: or for(auto item : XXX){};//新写法比较简便
+  for(表达式;表达式;表达式){}: or for(auto item : XXX){};//新写法比较简便  
   while(表达式){};  
   do{}while(表达式);   
 - switch,break,continue  
-  switch(表达式)
-  {case X:{};
-   case Y:{};
-   default : {};
-  }
+  switch(表达式)  
+  {case X:{};  
+   case Y:{};  
+   default : {};  
+  }  
 - ?:条件表达式  
 - #define,typedef  
 </details>
