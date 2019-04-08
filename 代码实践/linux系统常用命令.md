@@ -1,0 +1,21 @@
+- 路径操作  
+  - cd /绝对路径  
+  - cd 相对路径  
+  - cd.. 返回上级目录  
+  - cd ~ 跳转到home directory
+  - ls -a 显示所有文件，包含隐藏文件  
+  - ls -r 级联显示文件  
+  - ll 详细查询  
+  - mkdir 创建文件夹  
+  - mkdir -p 创建多级文件夹  
+  - rm 删除文件  
+  - rm -r 删除文件夹  
+  - cp 复制文件 格式cp 要复制的文件名 目标路径/文件名  
+  - cp -r 复制目录    
+  - mv 移动文件  
+- 用户管理，需在root用户下操作    
+  - useradd 用户  
+  - userdel 用户  
+  - passwd  用户  
+  - su 用户  
+  
