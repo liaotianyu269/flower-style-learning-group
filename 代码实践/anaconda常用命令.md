@@ -1,0 +1,21 @@
+- 环境管理  
+  - 查看已有的环境 conda info -e  
+  - 创建环境 conda create --name 环境名  
+  - 激活环境 activate 环境名  
+  - 失效环境 deactivate 环境名  
+  - 删除环境 conda remove --name 环境名 --all  
+- 包管理  
+  - 查看已安装的所有包 conda list  
+  - 查看某个包 conda list 包名  
+  - 搜索包的下载来源channel  conda search 包名  
+  - 下载包 conda install 包名  
+  - 下载时是否需手动确认下载 conda config --set always_yes yes  
+  - 更新包 conda update 包名  
+  - 删除包 conda remove 包名  
+- channel管理  
+  - add channel : conda config --add channels 网址  
+  - remove channel : conda config --remove channels 网址  
+  - show channel : conda config --show channels  
+  - 下载时显示来源channel : conda config --set show_channel_urls yes  
+- 下载源channel  
+  - 现在常用的是清华和中科大的镜像  
