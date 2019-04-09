@@ -216,6 +216,8 @@ string str1(char[],len)//创建string，给出c字符串，长度
 string str1(str2.position1,str2.position2)//创建string，给出c++字符串，字符串的起始位置，终止位置  
 string str1(num,c)//创建string，赋值n个c字符
 string.npos or string::npos//表示字符串最大容量，npos类型string::为size_type
+str.substr(0,str.length()-3);//截取开始到结束长度的子字符串，上面的例子截取的是str除去末尾三个字符的剩余子字符串
+str.erase(0,5);//表示删除固定长度的字符串，表示删除字符串开始的五个字符的剩余子字符串。
 ```
 <details><summary>string的操作</summary>
      
