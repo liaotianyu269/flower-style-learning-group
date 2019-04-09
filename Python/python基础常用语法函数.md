@@ -62,7 +62,7 @@ hasattr(object,name)  //判断对象是否包含对应的属性,有返回true，
 getattr(object,name,defaultvalue)//获取对象属性，若存在就打印出来，若是函数则打印函数地址，若不存在则返回默认值  
                                   若不设置默认值，则会报错。  
 setattr(object,name,value)//给对象属性赋值，若属性不存在，先创建属性，再赋值  
-
+import warnings  warnings.warn('')//发出警告，但是不影响程序执行  
 # 生成器、迭代器
 生成器与列表生成器类似，只是用()而不是[]，用for循环访问元素，生成器、迭代器节省空间。
 
