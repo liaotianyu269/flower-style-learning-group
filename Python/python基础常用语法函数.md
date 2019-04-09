@@ -64,6 +64,7 @@ getattr(object,name,defaultvalue)//获取对象属性，若存在就打印出来
 setattr(object,name,value)//给对象属性赋值，若属性不存在，先创建属性，再赋值  
 import warnings  warnings.warn('')//发出警告，但是不影响程序执行  
 from tqdm import tqdm  tqdm(iterator) //带进度条输出的迭代器with tqdm(iterator) as pbar:pbar.update(n)每n个输出一次  
+pbar.set_description('')  
 # 生成器、迭代器
 生成器与列表生成器类似，只是用()而不是[]，用for循环访问元素，生成器、迭代器节省空间。
 
