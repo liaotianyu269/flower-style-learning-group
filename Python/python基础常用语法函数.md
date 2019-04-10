@@ -62,12 +62,7 @@ hasattr(object,name)  //判断对象是否包含对应的属性,有返回true，
 getattr(object,name,defaultvalue)//获取对象属性，若存在就打印出来，若是函数则打印函数地址，若不存在则返回默认值  
                                   若不设置默认值，则会报错。  
 setattr(object,name,value)//给对象属性赋值，若属性不存在，先创建属性，再赋值  
-import warnings  warnings.warn('')//发出警告，但是不影响程序执行  
-from tqdm import tqdm  tqdm(iterator) //带进度条输出的迭代器with tqdm(iterator) as pbar:pbar.update(n)每n个输出一次  
-pbar.set_description('')  
-from torchsummary input summary  summary(model,inputsize())  
-os.system(shell脚本)  Python中执行shell脚本的命令，os.system调用系统shell执行接口  
-argparse argparse.ArgumentParser() argparse.ArgumentParser.add_argument() argparse.ArgumentParser.parse_args()  
+
 # 生成器、迭代器
 生成器与列表生成器类似，只是用()而不是[]，用for循环访问元素，生成器、迭代器节省空间。
 
