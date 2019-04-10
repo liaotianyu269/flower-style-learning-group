@@ -69,7 +69,9 @@
     dict() 或{}      dict初始化  
     dict.pop(key)    删除键值对  
     dict[key]=value  增加键值对  
-    dict.item()      返回k-v对  
+    dict.item()      以列表形式返回k-v对  
+    dict.keys()      以列表形式返回k  
+    dict.values()    以列表形式返回v  
     set（[]）         set初始化必须是一个列表输入  
     set.add()         set增加元素  
     set.remove()      set删除元素  
