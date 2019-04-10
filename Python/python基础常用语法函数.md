@@ -1,3 +1,29 @@
+# Python module的概念  
+  - module  
+    一个.py文件即为一个module（模块）  
+    分模块维护，可提高代码的维护性  
+  - 包
+    一个文件夹，且文件夹内需包含一个__init__.py文件，这个文件夹和__init__.py一起构成包  
+    在包内可以有.py文件  
+    在包内也可以有子包  
+  - 模块引用路径  
+    包名.子包名.模块名（不带.py后缀）  
+    在__init__.py中包含的模块名，可直接通过包名.模块名引用  
+  ```python
+      mycompany
+     ├─ web
+     │  ├─ __init__.py
+     │  ├─ utils.py
+     │  └─ www.py
+     ├─ __init__.py
+     ├─ abc.py
+     └─ xyz.py
+     ├─ utils.py
+  ```
+  module路径如下：  
+  mycompany.web.www mycompany.abc  mycompany.xyz mycompany.utils mycompany.web.utils  
+  如果mycompany的__init__.py中有这样的语句:from .web import www  or from mycompany.web import www  
+  则直接引用 from mycompany import www  
 # 基础语法  
     input()  输入，接收的是字符串格式    
     print("%",(,))  格式化输出  
