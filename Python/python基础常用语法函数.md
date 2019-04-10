@@ -66,6 +66,7 @@ import warnings  warnings.warn('')//发出警告，但是不影响程序执行
 from tqdm import tqdm  tqdm(iterator) //带进度条输出的迭代器with tqdm(iterator) as pbar:pbar.update(n)每n个输出一次  
 pbar.set_description('')  
 from torchsummary input summary  summary(model,inputsize())  
+os.system(shell脚本)  Python中执行shell脚本的命令，os.system调用系统shell执行接口  
 # 生成器、迭代器
 生成器与列表生成器类似，只是用()而不是[]，用for循环访问元素，生成器、迭代器节省空间。
 
