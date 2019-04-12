@@ -1,0 +1,6 @@
+暂时不解释unsigened char与signed char区别
+  暂时讨论unsigened整型与signed整形区别
+  区别1：c语言在关系运算符运算过程中，如果·其中一个数字为unsigned，则另外一个数字也会转化为unsigned，这将导致意想不到的结果
+  例1：表达式：-1  <  0U
+     此表达式的结果为false。
+     原因：-1被转化为无符号号整型2的32次方-1,大于0。
