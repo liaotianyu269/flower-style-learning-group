@@ -209,11 +209,80 @@
 - torch.save,torch.load模型保存和加载  
   - torch.save(module.state_dict(),'xx.pth')//只保存参数  
   - torch.load('xx.pth')//加载参数  
-  - module.load_state_dict(torch.load('xx.pth'))//将加载的参数添加到模型中  
+  - module.load_state_dict(torch.load('xx.pth'),strict=True)//将加载的参数添加到模型中,strict默认为True  
+                                    strict=False时，非严格加载参数，属性对应则加载，不对应不加载，保持原样  
+- cpu与gpu加载时相互转换  
+  torch.load(path,map_location=lambda storage,loc:storage)  
+  torch.load(path,map_location=lambda storage,loc:storage.cuda(0))  
+  torch.load(path,map_location={'cuda:0':'cuda:1'}  
 </details>
 
 <details><summary>torch.utils</summary>
   
+- **数据抽象**torch.utils.data.Dataset  
+  **将数据源整理成像列表一样的数据结构,元素内容可以(文件路径，label，特征点，图片数据...)**  
+  主要是定义\_\_init\_\_,\_\_getitem\_\_,\_\_len\_\_三个函数  
+  ```python
+  简单数据加载定义示例  
+  class myData(torch.utils.data.Dataset):
+      def __init__(self,root,transforms=None):    //root目录下包含图片，图片命名分别包含'cat'，'dog'  
+          self.imgpath=[os.path.join(root,path) for path in os.listdir(root)]  
+          
+      def __getitem__(self,index):
+          img=self.imagepath[index]
+          if 'cat' in img.split('/')[-1]:
+              label=0
+          else:
+              label=1
+          if transforms:
+              img=PIL.Image.open(img)
+              img=transform(img)
+          return img,label
+          
+      def __len__(self):
+         return len(self.imgpath)
+  dataset=myData('./liaodi')
+  dataset[0]                  //可以想使用list一样使用dataset，很方便  
+  for path,label in dataset:
+      print(path,label)
+  ```
+  **注:**
+  - 高负载的操作放在__getitem__中，如加载图片等。
+  - dataset中应尽量只包含只读对象，避免修改任何可变对象，利用多线程进行操作。
+  ```
+  第一点是因为多进程会并行的调用__getitem__函数，将负载高的放在__getitem__函数中能够实现并行加速。
+  第二点是因为dataloader使用多进程加载，如果在 Dataset实现中使用了可变对象，可能会有意想不到的冲突。
+  在多线程/多进程中，修改一个可变对象，需要加锁，但是dataloader的设计使得其很难加锁(在实际使用中也应尽量避免锁的存在)
+  因此最好避免在dataset中修改可变对象。
+  例如下面就是一个不好的例子，在多进程处理中self.num可能与预期不符，这种问题不会报错，因此难以发现。
+  如果一定要修改可变对象，建议使用Python标准库Queue中的相关数据结构。
+
+  class BadDataset(Dataset):
+      def __init__(self):
+          self.datas = range(100)
+          self.num = 0 # 取数据的次数
+      def __getitem__(self, index):
+          self.num += 1
+          return self.datas[index]
+  ```
+- **数据抽取**torch.utils.data.DataLoader  
+  - DataLoader(dataset, batch_size=1, shuffle=False, sampler=None, num_workers=0, collate_fn=default_collate,   
+    pin_memory=False,drop_last=False)  
+    - dataset：加载的数据集(Dataset对象)  
+    - batch_size：batch size  
+    - shuffle:：是否将数据打乱  
+    - sampler： 样本抽样，后续会详细介绍  
+    - num_workers：使用多进程加载的进程数，0代表不使用多进程  
+    - collate_fn： 如何将多个样本数据拼接成一个batch，一般使用默认的拼接方式即可  
+    - pin_memory：是否将数据保存在pin memory区，pin memory中的数据转到GPU会快一些  
+    - drop_last：dataset中的数据个数可能不是batch_size的整数倍，drop_last为True会将多出来不足一个batch的数据丢弃  
+- torch.utils.data.sampler  
+  在DataLoader中shuffle是sampler的一种，默认的sampler是SequentialSampler顺序采样即一个接一个采样  
+  常用的还有：WeightedRandomSampler(weights,num_samplers,replacement=True)  
+  当DataLoader中指定了sampler后，shuffle参数失效  
+  - weights:样本的权重，越大选取几率越大  
+  - num_samplers:总采样的数目  
+  - replacement:是否可重复选取                                                                                               
   
 </details>
 
@@ -222,11 +291,14 @@
 
 </details>
 
-
-
-<details><summary>torch.utils.data</summary>
+<details><summary>Visualization可视化</summary>
   
-- torch.utils.data.Dataset  
-- torch.utils.data.DataLoarder  
+  
+  
+</details>
 
+<details><summary>GPU加速</summary>
+  
+  
+  
 </details>
