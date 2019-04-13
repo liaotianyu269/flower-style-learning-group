@@ -281,7 +281,8 @@
   常用的还有：WeightedRandomSampler(weights,num_samplers,replacement=True)  
   当DataLoader中指定了sampler后，shuffle参数失效  
   - weights:样本的权重，越大选取几率越大  
-  - num_samplers:总采样的数目  
+  - num_samplers:总采样的数目//当采样数目==样本数目，且replacement=False时，意味样本每一个采一次都会采到  
+                              那么WeightedRandSampler将失去意义。  
   - replacement:是否可重复选取                                                                                               
   
 </details>
@@ -293,12 +294,35 @@
 
 <details><summary>Visualization可视化</summary>
   
-  
-  
+- Visdom类似matplotlib的画图工具  
+  ```python
+  import visdom
+  vis=visdom.Visdom(env='test')
+  vis.line(X,Y,Win='',name='')//横纵坐标，窗口名字，线的名字，重复两次，win命名相同，新图覆盖旧图    
+  vis.line(X,Y,Win='',update='append',name'')//设置update方式为apend，数据更新，不覆盖原图  
+  vis.updateTrace(X,Y,Win='',name='')//在同一个窗口上画一条新线    
+  vis.image(ndarray，Win='')//接收一个numpy array的数据，并可视化为图片      
+  vis.images(ndarray,Win='',nrow=)//接收一个batch的ndarray数据，并可视化图片，nrow指定有多少行  
+  vis.text(''' ''',Win='')//支持html语法<br>换行<hl>标题<b>加粗之类的          
+  ```
 </details>
 
 <details><summary>GPU加速</summary>
   
-  
-  
+- Tensor,Variable,Module都有.cuda()方法，但是有区别：
+  - Tensor，Variable的.cuda()以后，返回新的变量为GPU版本，原来的变量没有变化  
+  - Module的.cuda()以后，是inplace方式，Module自身变为GPU版本  
+- .cuda(device=)  
+  - device:应用哪一块GPU  
+- is_cuda  
+  - 是否在GPU上  
+- get_device()返回使用的GPU是哪一块  
+- 损失函数也是一种运算可放在GPU上  
+- torch.cuda.device()设置默认使用的GPU  
+- torch.cuda.set_device()指定使用某一块GPU  
+- CUDA_VISIBLE_DEVICE来指定使用多块GPU
+  - 命令行格式 python main.py CUDA_VISIBLE_DEVICE 0,1  
+  - import方式 import os ,os.environ["CUDA_VISIBLE_DEVICE"]="0,1"  
+  - 使用指定的某几块物理GPU  
+  - 在逻辑使用上，还是按0,1，2 的顺序使用，虽然可能使用的是第2,4,5块物理GPU  
 </details>
