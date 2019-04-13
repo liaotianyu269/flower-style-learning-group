@@ -287,11 +287,6 @@
   
 </details>
 
-<details><summary>向量化</summary>
-  
-
-</details>
-
 <details><summary>Visualization可视化</summary>
   
 - Visdom类似matplotlib的画图工具  
@@ -325,4 +320,9 @@
   - import方式 import os ,os.environ["CUDA_VISIBLE_DEVICE"]="0,1"  
   - 使用指定的某几块物理GPU  
   - 在逻辑使用上，还是按0,1，2 的顺序使用，虽然可能使用的是第2,4,5块物理GPU  
+</details>
+
+<details><summary>向量化</summary>
+  
+
 </details>
