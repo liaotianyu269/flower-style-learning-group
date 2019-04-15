@@ -1,4 +1,6 @@
 **UTF8读取txt中文出现乱码，使用该函数转换**
+
+
 inline string UTF8ToGB(const char* str)
 {
 	string result;
@@ -24,6 +26,8 @@ inline string UTF8ToGB(const char* str)
 
 
 **读取txt数字，读为int型（注意int范围，身份证号不可以）**
+
+
 bool JudgeNum(string str, int& iTmp)
 {
 	bool bNum = true;
