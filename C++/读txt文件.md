@@ -1,4 +1,4 @@
-//UTF8读取txt中文出现乱码，使用该函数转换
+**UTF8读取txt中文出现乱码，使用该函数转换**
 inline string UTF8ToGB(const char* str)
 {
 	string result;
@@ -23,7 +23,7 @@ inline string UTF8ToGB(const char* str)
 }
 
 
-//读取txt数字，读为int型（注意int范围，身份证号不可以）
+**读取txt数字，读为int型（注意int范围，身份证号不可以）**
 bool JudgeNum(string str, int& iTmp)
 {
 	bool bNum = true;
@@ -66,7 +66,7 @@ int ReadIntFromTxt(const char* filename, std::vector<int>& outfile)
 
 
 
-//读txt，读为string
+**读txt，读为string**
 inline int ReadTxt(const char* filename, std::vector<std::string>& outfile){
 	FILE *fp;
 	char StrLine[1024];             //每行最大读取的字符数
