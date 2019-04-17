@@ -8,7 +8,7 @@
 //ascii 转 Utf8   
 //string Change::ASCII2UTF_8(string& strAsciiCode)  
 
-
+```C++
 //UTF-8转Unicode   
 std::wstring Change::Utf82Unicode(const std::string& utf8string)  
 {  
@@ -108,4 +108,4 @@ string Change::ASCII2UTF_8(string& strAsciiCode)
 	strRet = Unicode2Utf8(wstr);  
 	return strRet;  
 }  
-  
+```
