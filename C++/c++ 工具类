@@ -1,7 +1,8 @@
 # 时间相关函数 
 
 string类型转换成时间类型（time_t) 
-``` 
+
+```
 time_t base_tool：：StringToDatetime(char *str)  
 {  
 	tm tm_;  
@@ -19,7 +20,7 @@ time_t base_tool：：StringToDatetime(char *str)
 	return t_; //秒时间  
 }  
 
-``` 
+```
 # 添加\，防止一个\被转义，利用函数，转换成\\ 
 ``` 
 int  string_replase(string &s1, const string &s2, const string &s3)
