@@ -1,4 +1,5 @@
 # 时间相关函数 
+
 string类型转换成时间类型（time_t) 
 ``` 
 time_t base_tool：：StringToDatetime(char *str)  
@@ -17,19 +18,20 @@ time_t base_tool：：StringToDatetime(char *str)
 	time_t t_ = mktime(&tm_); //已经减了8个时区  
 	return t_; //秒时间  
 }  
+
 ``` 
 # 添加\，防止一个\被转义，利用函数，转换成\\ 
 ``` 
 int  string_replase(string &s1, const string &s2, const string &s3)
-{
-	string::size_type pos = 0;
-	string::size_type a = s2.size();
-	string::size_type b = s3.size();
-	while ((pos = s1.find(s2, pos)) != string::npos)
-	{
-		s1.replace(pos, a, s3);
-		pos += b;
-	}
-	return 0;
-}
+{ 
+	string::size_type pos = 0; 
+	string::size_type a = s2.size(); 
+	string::size_type b = s3.size(); 
+	while ((pos = s1.find(s2, pos)) != string::npos)  
+	{ 
+		s1.replace(pos, a, s3); 
+		pos += b; 
+	} 
+	return 0; 
+} 
 ``` 
