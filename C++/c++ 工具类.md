@@ -37,6 +37,6 @@ int  string_replase(string &s1, const string &s2, const string &s3)
 } 
 ``` 
 ```
-代码调eg: 
+eg: 
 string_replase(*str, "\\", "\\\\");
 ```
