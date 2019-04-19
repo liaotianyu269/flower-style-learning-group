@@ -21,7 +21,7 @@ time_t base_tool：：StringToDatetime(char *str)
 }  
 
 ```
-# 添加\，防止一个\被转义，利用函数，转换成\\ 
+# 添加(\)，防止一个(\)被转义，利用函数，转换成(\\) 
 ``` 
 int  string_replase(string &s1, const string &s2, const string &s3)
 { 
@@ -36,3 +36,7 @@ int  string_replase(string &s1, const string &s2, const string &s3)
 	return 0; 
 } 
 ``` 
+```
+代码调eg: 
+string_replase(*str, "\\", "\\\\");
+```
