@@ -12,6 +12,8 @@
   - 下载时是否需手动确认下载 conda config --set always_yes yes  
   - 更新包 conda update 包名  
   - 删除包 conda remove 包名  
+  - 指定channels下载 pip install -i channel url some-packge  
+                    conda install --channel channel url some-package  
 - channel管理  
   - add channel : conda config --add channels 网址  
   - remove channel : conda config --remove channels 网址  
