@@ -78,6 +78,8 @@
     set1 & set2 ,set1 |set2     set的交集、并集  
     set1.difference(set2), set1.intersection(set2) 不同的元素，相同元素  
     set.clear()     清空  
+    sorted(dict,key,reverse) 给字典排序  
+    sorted(dict.items(),key,reverse)  
 # 函数  
  - 函数定义  
    使用def语句，依次写出函数名、括号、括号中的参数和冒号:  
