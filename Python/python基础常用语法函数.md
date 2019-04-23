@@ -159,7 +159,10 @@ print('....'%())
     os.path.dirname()  获取路径名  
     os.path.basename()  获取文件名  
 - shutil模块，可以看做os模块的补充  
- **待补充**  
+    shutil.copyfile(src,dst)  src源文件，dst目标文件，不存在就创建存在被覆盖  
+    shutil.move(src,dst)  相当于剪切，src源文件，dst目录，如果dst下有同名的文件则报错，没有则移动成功  
+    shutil.copy(src,dst)  src源文件,dst目标文件或目录,不存在就创建存在则被覆盖  
+    shutil.copytree(src,dst)  将src目录下的内容复制到dst下，如果目录dst存在则报错，不存在则成功  
 ## 正则表达式
 用来匹配字符串的强有力的武器  
 **待补充**
