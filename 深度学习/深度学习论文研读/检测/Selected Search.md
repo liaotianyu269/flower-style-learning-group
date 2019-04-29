@@ -1,0 +1,4 @@
+- 根据Efficient Graph-Based Image Segmentation来分割图像  
+- 合并策略：颜色相似度，纹理相似度，大小相似度，吻合相似度  
+- 合并不同尺度的区域  
+- 生成候选框  
