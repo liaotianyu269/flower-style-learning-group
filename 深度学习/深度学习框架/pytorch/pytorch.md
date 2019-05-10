@@ -306,6 +306,7 @@
   
 - torch.cuda.is_available()     gpu是否可用
 - torch.backends.cudnn.benchmark   设为True有助加速训练  
+- torch.nn.DataParallel(model,device_id=[])  这是一个类，将model从原始GPU上复制到其他GPU上，在minibatch运行时，均分到每个model副本上，所以minibatch数量最好是 device_ids数量的整数倍。 最终，反向梯度传播会汇聚到原始model上。  
 - Tensor,Variable,Module都有.cuda()方法，但是有区别：
   - Tensor，Variable的.cuda()以后，返回新的变量为GPU版本，原来的变量没有变化  
   - Module的.cuda()以后，是inplace方式，Module自身变为GPU版本  
@@ -330,3 +331,8 @@
   
 
 </details>
+
+<details><summary>torch.optimizer.lr_scheduler</summary>
+  
+ - torch.optimizer.lr_scheduler.StepLR(optimizer,stepsize,gamma=0.1,last_epoch=-1) //每stepsize个epoch后，lr变为原来的0.1,直到最后一个epoch时，lr变为初始大小。  
+ </details>
