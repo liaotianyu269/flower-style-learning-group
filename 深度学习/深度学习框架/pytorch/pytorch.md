@@ -304,9 +304,12 @@
 
 <details><summary>GPU加速</summary>
   
+- torch.cuda.is_available()     gpu是否可用
+- torch.backends.cudnn.benchmark   设为True有助加速训练  
 - Tensor,Variable,Module都有.cuda()方法，但是有区别：
   - Tensor，Variable的.cuda()以后，返回新的变量为GPU版本，原来的变量没有变化  
   - Module的.cuda()以后，是inplace方式，Module自身变为GPU版本  
+
 - .cuda(device=)  
   - device:应用哪一块GPU  
 - is_cuda  
@@ -320,6 +323,7 @@
   - import方式 import os ,os.environ["CUDA_VISIBLE_DEVICE"]="0,1"  
   - 使用指定的某几块物理GPU  
   - 在逻辑使用上，还是按0,1，2 的顺序使用，虽然可能使用的是第2,4,5块物理GPU  
+ 
 </details>
 
 <details><summary>向量化</summary>
