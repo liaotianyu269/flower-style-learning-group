@@ -332,7 +332,7 @@
 
 </details>
 
-<details><summary>torch.optimizer.lr_scheduler</summary>
+<details><summary>torch.optim.lr_scheduler</summary>
   
- - torch.optimizer.lr_scheduler.StepLR(optimizer,stepsize,gamma=0.1,last_epoch=-1) //每stepsize个epoch后，lr变为原来的0.1,直到最后一个epoch时，lr变为初始大小。  
+ - torch.optim.lr_scheduler.StepLR(optimizer,stepsize,gamma=0.1,last_epoch=-1) //每stepsize个epoch后，lr变为原来的0.1,直到最后一个epoch时，lr变为初始大小。  
  </details>
