@@ -65,6 +65,11 @@
   - torch.from_numpy(ndarray)  
   - torch.Tensor(ndarry)  
   - tensor.numpy()  
+- tensor在CPU和GPU上的转换	
+  - tensor.cuda()
+  - tensor.cpu()
+  - tensor.to('cpu')
+  - tensor.to('gpu')
 </details>
 
 <details><summary>torch.autograd.Variable</summary>
