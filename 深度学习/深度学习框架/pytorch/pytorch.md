@@ -1,24 +1,31 @@
 <details><summary>torch.Tensor</summary>
   
 - 创建
+  - torch.tensor([]) or torch.tensor(())    //list或tuple实例转换为tensor
   - torch.Tensor(rows,cols)  
   - torch.ones/torch.zeros/torch.eye(rows,cols)  
   - torch.arange(s,e,step)/torch.linspace(s,e,num)  
-  - torch.rand/torch.randn(rows,cols) //0-1均匀分布，-1--1标准分布  
+  - torch.rand   //0-1均匀分布  
+  - torch.randn(rows,cols) //-1--1标准分布  
   - torch.normal(means,std,out)  //有问题,创建不了  
   - torch.randperm(n)//随机排列  
   - torch.is_tensor  
   - torch.set_default_tensor_type  
   - torch.numel  
   - tensor.size()/tensor.shape //尺寸  
-  - tensor.dtype/tensor.type()//数据类型  
   - tensor.numel()//元素个数  
+  - f
 - 数据类型  
-  - 8位 torch.CharTensor/torch.ByteTensor  
-  - 16位 torch.ShortTensor/torch.cuda.HalfTensor  
-  - 32位 torch.IntTensor/torch.FloatTensor  
-  - 64位 torch.LongTensor/torch.DoubleTensor  
-  - 类型转换 tensor.type()/tensor.type_as(tensor)  
+  - 8位UINT torch.ByteTensor/torch.cuda.ByteTensor  
+  - 8为INT torch.CharTensor/torch.cuda.CharTensor    
+  - 16位INT torch.ShortTensor/torch.cuda.ShortTensor    
+  - 32位INT torch.IntTensor/torch.cuda.IntTensor  
+  - 64位INT torch.LongTensor/torch.cuda.LongTensor   
+  - 16位float torch.HalfTensor/torch.cuda.HalfTensor  
+  - 32位float torch.FloatTensor/torch.cuda.FloatTensor  
+  - 64位float torch.DoubleTensor/torch.cuda.DoubleTensor  
+  - tensor.type()/tensor.type_as(tensor)   //类型转换  
+  - torch.set_default_tensor_type('')  //设置默认tensor类型  
 - 常用操作  
   **从存储角度看，对tensor的操作分为两类：函数名以_结尾的是inplace方式, 即会修改调用者自己的数据。**  
   - tensor.view()//修改尺寸，保持元素不变，浅复制  
@@ -66,10 +73,20 @@
   - torch.Tensor(ndarry)  
   - tensor.numpy()  
 - tensor在CPU和GPU上的转换	
-  - tensor.cuda()
-  - tensor.cpu()
-  - tensor.to('cpu')
-  - tensor.to('gpu')
+  - tensor.cuda()  
+  - tensor.cpu()  
+  - tensor.to('cpu')  
+  - tensor.to('cuda:X')  
+- 0.4版PYTORCH以后tensor和Variable合并  
+  - 求导
+	- torch.Tensor(tensor,requires_grad=False) //创建时默认requires_grad为False  
+    - existing_tensor.requires_grad_()  //已存在的tensor调用requires_grad_()进行修改  
+  - 不求导  
+  	  - with torch.no_grad():  或 with torch.set_grad_enabled(False/True): 或 torch.set_grad_enabled(False/True) //表示此语句以下tensor不求导  
+  - torch.Tensor.data 		//深复制  
+  - torch.Tensor.detach()   //浅复制  
+  - torch.Tensor.sum() 或 torch.Tensor[n]  //对于求和或者索引得到的某个元素，返回的是一个tensor标量，维度为0，类型还是tensor，获取纯number，使用.item()  
+  - 
 </details>
 
 <details><summary>torch.autograd.Variable</summary>
@@ -309,28 +326,22 @@
 
 <details><summary>GPU加速</summary>
   
-- torch.cuda.is_available()     gpu是否可用
-- torch.backends.cudnn.benchmark   设为True有助加速训练  
-- torch.nn.DataParallel(model,device_id=[])  这是一个类，将model从原始GPU上复制到其他GPU上，在minibatch运行时，均分到每个model副本上，所以minibatch数量最好是 device_ids数量的整数倍。 最终，反向梯度传播会汇聚到原始model上。  
-- Tensor,Variable,Module都有.cuda()方法，但是有区别：
-  - Tensor，Variable的.cuda()以后，返回新的变量为GPU版本，原来的变量没有变化  
-  - Module的.cuda()以后，是inplace方式，Module自身变为GPU版本  
-
-- .cuda(device=)  
-  - device:应用哪一块GPU  
-- is_cuda  
-  - 是否在GPU上  
-- get_device()返回使用的GPU是哪一块  
-- 损失函数也是一种运算可放在GPU上  
+- torch.cuda.is_available()     
+- torch.cuda.current_device() 当前设备 
 - torch.cuda.device()设置默认使用的GPU  
 - torch.cuda.set_device()指定使用某一块GPU  
-- CUDA_VISIBLE_DEVICE来指定使用多块GPU
-  - 命令行格式 python main.py CUDA_VISIBLE_DEVICE 0,1  
-  - import方式 import os ,os.environ["CUDA_VISIBLE_DEVICE"]="0,1"  
-  - 使用指定的某几块物理GPU  
-  - 在逻辑使用上，还是按0,1，2 的顺序使用，虽然可能使用的是第2,4,5块物理GPU  
-  - 在数据处理，训练，测试时涉及到很多运算，1. 什么样的运算可以在GPU上加速 2. 这些运算在GPU上实现加速的原理或机制 3. 合理设计GPU加速机制  
- 
+- os.environ['CUDA_VISIBLE_DEVICES']='NUM'  来指定使用多块GPU  
+- torch.device('cuda',index=0) 或 torch.device('cuda',0) 或 torch.device('cuda:0') //创建设备  
+
+- tensor.is_cuda  
+- tensor.get_device()返回使用的GPU是哪一块  
+- torch.randn((2,3),device=1) 或 torch.randn((2,3),device='cuda:0') 或 torch.randn((2,3),device=torch.device('cuda:0))  //使用设备  
+- tensor.to('cpu')
+- tensor.to('cuda:0')
+
+- torch.backends.cudnn.benchmark   
+- torch.nn.DataParallel(model,device_id=[])   
+
 </details>
 
 <details><summary>向量化</summary>
