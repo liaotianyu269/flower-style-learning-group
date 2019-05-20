@@ -1,5 +1,7 @@
 常用快捷键：tab补全参数，包括路径和文件名；方向键上下，出现之前命令（少打相同的命令），Ctrl+c结束目前程序，Ctrl+z暂停程序，fg继续执行程序,clear清空终端显示内容    
-
+- sudo apt-get install softname1   下载软件  
+- sudo apt-get remove softname1    卸载软件  
+- sudo apt-cache search softname1  搜索软件  
 - cd  
   - cd /绝对路径  
   - cd ./相对路径  .代表当前目录  
