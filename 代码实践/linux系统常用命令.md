@@ -57,7 +57,12 @@
   `#!/usr/bin/python3 在.py文件头添加此语句，表明使用python3来执行此文件`  
   `file1.py 即可执行`  
   `不需 python3 file1.py`  
-  
+- tar   
+  - tar -zxvf filename.tgz -C 指定路径  //解压.tgz .tar.gz文件  
+  - tar -zcvf filename.tar.gz file1 file2 ... //压缩文件  
+- rar  
+  - rar x filename.rar  //解压rar文件 完整目录  
+  - rar e filename.rar  //解压rar文件 到当前目录  
 - 用户管理，需在root用户下操作    
   - useradd 用户  
   - userdel 用户  
