@@ -31,7 +31,9 @@
   - cp -i old new  复制时增加确认流程，终端提示是否复制此文件  
   - cp -r old new  递归复制      
   - cp old1 old2 new 多文件同时复制  
-  
+- find
+- cut
+- sed
 - mv  
   - mv oldfile newfile 移动并重命名文件  
   - mv oldfile dstdir  移动文件至dstdir目录  
