@@ -66,6 +66,8 @@
 - rar  
   - rar x filename.rar  //解压rar文件 完整目录  
   - rar e filename.rar  //解压rar文件 到当前目录  
+- export
+  - export XXX
 - 用户管理，需在root用户下操作    
   - useradd 用户  
   - userdel 用户  
