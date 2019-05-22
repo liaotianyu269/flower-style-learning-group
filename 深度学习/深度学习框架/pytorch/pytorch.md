@@ -52,6 +52,7 @@
   - torch.t()/torch.transpose()//转置，浅复制  
   - torch.chunk(tensor,chunks,dim)//类似split,按dim分割，分成chunks块  
   - torch.unbind(tensor,dim)//按dim，每行或列为一个tensor，组成一个元组，并返回  
+  - torch.where()
 - 数学运算  
   - torch.sum  
   - torch.mean  
@@ -89,6 +90,7 @@
   - 
 </details>
 
+###### Variable在0.4版的pytorch后，相应功能被合并到tensor中了  
 <details><summary>torch.autograd.Variable</summary>
   
 - Variable数据结构：
