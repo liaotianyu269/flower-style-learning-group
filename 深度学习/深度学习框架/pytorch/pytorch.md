@@ -90,9 +90,10 @@
   - 
 </details>
 
-###### Variable在0.4版的pytorch后，相应功能被合并到tensor中了  
+
 <details><summary>torch.autograd.Variable</summary>
-  
+
+###### Variable在0.4版的pytorch后，相应功能被合并到tensor中了  
 - Variable数据结构：
   - 包含成员data，grad，grad_fn  
   - data:就是一个tensor  
