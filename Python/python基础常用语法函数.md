@@ -159,7 +159,7 @@ print('....'%())
     os.path.isdir()  判断是否为文件夹  
     os.path.join()   以'\\'连接字符串  
     os.path.split()  分割文件路径和文件，以列表形式返回路径和文件  
-    os.path.exists()  路径是否存在
+    os.path.exists()  路径是否存在  
     os.path.splitext()  返回扩展名和其余部分  
     os.path.splitdrive()  返回驱动器名和其余部分  
     os.path.dirname()  获取路径名  
