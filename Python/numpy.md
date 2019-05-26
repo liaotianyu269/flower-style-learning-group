@@ -14,4 +14,4 @@ import numpy as np
   array[a:b,c:d]         获取a-b行，c-d列的矩形范围的元素  
   以上类似于python中list列表的元素访问机制，切片和某个元素的访问  
   
-  
+  np.concatenate((np.array A,np.array B),axis=0,1)
