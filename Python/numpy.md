@@ -33,10 +33,10 @@ import numpy as np
   array[a,...]           获取某一维的所有元素  
   
   基础运算  
-  + np.add  
-  -
-  /
-  *             element-wise product  
+  \+ np.add  
+  \-  
+  \/  
+  \*             element-wise product  
   @             matrix product  
   np.dot        matrix product  
   np.sum()        
