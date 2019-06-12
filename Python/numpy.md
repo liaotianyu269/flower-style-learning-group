@@ -12,7 +12,8 @@ import numpy as np
   np.random.randn(rows,cols)  
   
   np.fromfunction(f,(rows,cols),dtype)  
-  
+  np.fromfile(filepath,dtype='')
+
   np.arange(s,e,stride)  
   np.linspace(s,e,num)  
   
