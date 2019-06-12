@@ -62,6 +62,7 @@ import numpy as np
   np.transpose()  np.T  转置  
   np.flat   集合所有元素的迭代器  
   np.ravel()  重塑为1维矩阵  
+  np.flatten  重塑为1维矩阵  
   np.hsplit(array,(n,...))  纵向分割  
   np.vsplit(array,(n,...))  横向分割  
   id(array)  矩阵id  
