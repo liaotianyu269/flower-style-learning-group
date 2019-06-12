@@ -65,5 +65,5 @@ import numpy as np
   np.flatten  重塑为1维矩阵  
   np.hsplit(array,(n,...))  纵向分割  
   np.vsplit(array,(n,...))  横向分割  
-  id(array)  矩阵id  
+  np.tile(array,(rows,cols))  以矩阵为单元，进行堆叠  
   np.copy()  深复制  
