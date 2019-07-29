@@ -343,7 +343,7 @@
 - tensor.to('cuda:0')
 
 - torch.backends.cudnn.benchmark   
-- torch.nn.DataParallel(model,device_id=[])   
+- torch.nn.DataParallel(model,device_ids=[])   
 
 </details>
 
