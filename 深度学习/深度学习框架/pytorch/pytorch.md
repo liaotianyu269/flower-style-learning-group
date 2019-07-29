@@ -335,7 +335,7 @@
 - torch.cuda.set_device()指定使用某一块GPU  
 - os.environ['CUDA_VISIBLE_DEVICES']='NUM'  来指定使用多块GPU  
 - torch.device('cuda',index=0) 或 torch.device('cuda',0) 或 torch.device('cuda:0') //创建设备  
-
+- torch.cuda.empty_cache()  清除显卡缓存  
 - tensor.is_cuda  
 - tensor.get_device()返回使用的GPU是哪一块  
 - torch.randn((2,3),device=1) 或 torch.randn((2,3),device='cuda:0') 或 torch.randn((2,3),device=torch.device('cuda:0))  //使用设备  
