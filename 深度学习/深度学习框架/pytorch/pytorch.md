@@ -344,7 +344,7 @@
 
 - torch.backends.cudnn.benchmark   
 - torch.nn.DataParallel(model,device_ids=[])   
-
+- 判断数据类型，np.array or torch.Tensor 判断数据位置，cpu or gpu，查看数据运算 加减乘除 or item()  
 </details>
 
 <details><summary>向量化</summary>
