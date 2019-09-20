@@ -58,8 +58,17 @@
     Range::all（）表示所有的行或列  
 ## 矩形类  
     Rect rect;  
-    rect.x,rect.y,rect.width,rect.height,rect.Size(),rect.area(),rect.tl(),rect.br(),rect1 & rect2,rect1 | rect2,rect+point,rect+size。 
+    rect.x,rect.y,rect.width,rect.height,rect.Size(),rect.area()  
+    rect.tl(),rect.br()  
+    rect1 & rect2,rect1 | rect2  
+    rect+point,rect+size。 
     左上角横纵坐标，矩形宽高，（宽高），面积，左上角、右下角坐标，矩形交集、并集，矩形平移，伸缩  
+## 图像变换
+    getAffineTransform(Mat a, Mat b)      //Mat 是三个点的坐标3*2尺寸，返回变换矩阵，2*3尺寸的MAT  
+    理解变换矩阵，用基础变换矩阵求得最终的变换矩阵，平移、旋转、缩放三种基础变换矩阵   
+    getRotationMatrix2D(Point,angle degree, scale)    
+    resize(Mat a,Mat b,size,fx,fy,interpolation)  
+    rotate(Mat a,Mat b,rotate flag)  
 # OPENCV常用的函数：  
     waitKey（）  给定的时间内(ms)等待用户按键触发，返回按键对应的ASC码;如果用户没有按下键,则接续等待。  
     saturate_cast<value type>()   防数据溢出：(如value type为uchar，则data<0？0：data or data>255?255:data)  
@@ -76,6 +85,10 @@
     circle；圆形  
     rectangle；矩形  
     line；线段  
+## 鼠标回执
+    setMouseCallback    
+## 键盘回执
+    waitKey()           //返回阿斯卡码
 ## 给图片注释文字  
     putText  
     annotation  
