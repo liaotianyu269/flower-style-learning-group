@@ -8,25 +8,25 @@
     MAT::zeros（rows，cols，CV_8UC1）;全零矩阵  
     MAT::ones(rows,cols,CV_8UC1）；全1矩阵
     (MAT_<double>(rows,cols)<<1,2,3,4，...)；MAT_容器  
-    MAT A=MAT.clone（）；MAT.clone()成员函数  
-    MAT A=B.row(n) or MAT A=B.col(m) or MAT A=B.rowRange(Range()) or MAT A=B.colRange(Range()) 获取某行或某列或连续行、连续列的值 
-    MAT A=B.(Rect(1,2,3,4)) or MAT A=B.(Rect(Point,Size)) or MAT A=B.(Rect(Point,Point)) 利用Rect类来获取矩形区域
-    MAT A; MAT.copyTo（A）；MAT.copyTo（）成员函数  
-    MAT只有copyTo（）和clone（）方法是深度拷贝，赋值或拷贝构造函数都是浅拷贝  
 ## MAT成员数据：  
-    MAT.rows,MAT.cols,MAT.type(),MAT.channels(),MAT.Size()  
-    MAT.dims,MAT.total(),MAT.elemSize(),MAT.elemSize1()  
-    Mat.rowRange(),Mat.colRange()
-## MAT像素访问：  
+    MAT.rows,MAT.cols,MAT.total(),MAT.Size()  
     MAT.data,MAT.step[0],MAT.step[1] 分别获取矩阵首个数值的地址，每行的字节数，每个数值的字节数，配合使用，效率最快  
     MAT.ptr<value type>(rows) 获取某行的首地址，效率次之  
-    MAT.begin<Vec3b>(),MAT.end<Vec3b>() Vec3b表示3维数组,也可以是其他value type 如int，效率未知  
+    MAT A=MAT.clone（）；MAT.clone()成员函数  
+    MAT A; MAT.copyTo（A）；MAT.copyTo（）成员函数  
+    MAT只有copyTo（）和clone（）方法是深度拷贝，赋值或拷贝构造函数都是浅拷贝 
+    MAT A=B.row(n) or MAT A=B.col(m) or MAT A=B.rowRange(Range()) or MAT A=B.colRange(Range()) 获取某行或某列或连续行、连续列的值   
+    MAT A=B.(Rect(1,2,3,4)) or MAT A=B.(Rect(Point,Size)) or MAT A=B.(Rect(Point,Point)) 利用Rect类来获取矩形区域  
+    MAT.empty()  若MAT.total() 为0 或 MAT.data 为NULL，则返回True，否则返回False  
+    
+    MAT.elemSize(),MAT.elemSize1()  
+    MAT.type(),MAT.dims,MAT.channels()  
+## MAT像素访问：  
     MAT.at<Vec3b>(rows,cols)  效率最慢，但可读性最好  
     MAT.isContinuous()  矩阵存储是否连续  
-    MAT.empty()  若MAT.total() 为0 或 MAT.data 为NULL，则返回True，否则返回False  
+    MAT.begin<Vec3b>(),MAT.end<Vec3b>() Vec3b表示3维数组,也可以是其他value type 如int，效率未知  
 ## MAT通道分离、分离  
     split(MAT,MAT Vector),merge(MAT Vector,MAT)  
-    
 ## MAT读取、展示、保存  
     imread(path,readmode)  readmode:IMREAD_UNCHANGED-1,IMREAD_GRAY 0,IMREAD_COLOR 1 OR >0,IMREAD_ANYDEPTH 2,IMREAD_ANYCOLOR 4  
     imshow(windowname,mat)  
