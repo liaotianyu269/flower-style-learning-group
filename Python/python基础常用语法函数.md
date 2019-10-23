@@ -111,22 +111,20 @@
 # 常用的函数
 enumerate()  
 isinstance(variable,type)  
+hasattr(object,name)  //判断对象是否包含对应的属性,有返回true，否则返回false。  
+getattr(object,name,defaultvalue)//存在就打印出来，若不存在则返回默认值若不设置默认值，则会报错    
+setattr(object,name,value)//给对象属性赋值，若属性不存在，先创建属性，再赋值  
+# 高级函数  
 map(function,iterable) 返回一个迭代器  
 reduce(function(x,y),iterable) 返回最后的计算结果,function必须是接收两个参数  
-lambda variable:表达式  lambda冒号前的是参数，函数返回值就是表达式的结果  
 filter(function,iterable)  返回一个迭代器，根据function返回值是True或False来决定是否留下元素。  
+lambda variable:表达式  lambda冒号前的是参数，函数返回值就是表达式的结果  
 zip(一个或多个迭代器)  将多个对应位置的元素组成新的一组tuple，返回一个迭代器。  
 zip(\*迭代器) 将迭代器最外面的[]去掉，里面的元素成为zip的迭代器进行处理。  
-hasattr(object,name)  //判断对象是否包含对应的属性,有返回true，否则返回false。  
-getattr(object,name,defaultvalue)//获取对象属性，若存在就打印出来，若是函数则打印函数地址，若不存在则返回默认值  
-                                  若不设置默认值，则会报错。  
-setattr(object,name,value)//给对象属性赋值，若属性不存在，先创建属性，再赋值  
-print('....'%())  
-
 # 生成器、迭代器
 生成器与列表生成器类似，只是用()而不是[]，用for循环访问元素，生成器、迭代器节省空间。
 # 类
-  
+class.__dict__  
 ---
 # 字符串  
 不管是C++还是python，字符串、文件读写或文件路径的操作都是字符串的操作，字符串操作是共有且常用的问题，有必要专题整理总结  
@@ -154,7 +152,8 @@ utf-8 可变长编码 如英文一字节，中文三字节 兼容ascii 支持多
     str.isalpha(),str.isdigit(),str.isalnum(),str.isspace(),str.islower(),str.isupper(),str.istitle()
 ---
 ## 文件读写
-    with open(path,mode) as file:  文件读取或写入mode='r','w','a'还有**二进制文件读取或写入mode='rb','rw'，待了解二进制文及其读写方式**  
+    with open(path,mode) as file:  
+    open(filepath,mode,encoding)  encoding指定文件编码方式  
     file.readlines()  返回按行读取的迭代器  
     file.write(str)   注：写入数据类型需是字符串  
 ---
@@ -187,5 +186,6 @@ utf-8 可变长编码 如英文一字节，中文三字节 兼容ascii 支持多
     shutil.copytree(src,dst)  将src目录下的内容复制到dst下，如果目录dst存在则报错，不存在则成功  
 ## 正则表达式
 用来匹配字符串的强有力的武器  
-**待补充**
+# 序列化 JSON  
+使用json来序列化对象，json序列化是各语言兼容的标准，速度更快  
   
