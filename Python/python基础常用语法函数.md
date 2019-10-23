@@ -62,13 +62,20 @@
     与dict类似
 ## list，tuple,dict操作
     list() 或[]      list初始化  
-    列表生成器[加for循环]   list初始化
-    list.append(),list.extend([]),list.insert(index,elem),list.remove(value),list.pop(index),list*num  
-    list.count(),list.index(),list.sort(key,reverse=False)就地排序,sorted(list)赋值排序,list.reverse(),reversed()  
-    list=list('peal') list[1:]='ython' list[0:0]='abc' list[0:3]=[] 注：分片赋值  
+    列表生成器[加for循环]   list初始化  
+    list.append(),list.extend([]),list.insert(index,elem),list*num  
+    list.remove(value),list.pop(index)  
+    list.index()，list.count()    
+    list[1:]='ython' list[0:0]='abc' list[0:3]=[] 注：分片赋值  
+    list.reverse(),reversed()  
+    list.sort(key,reverse=False)就地排序,sorted(list)赋值排序  
     dict() 或{}      dict初始化  
-    dict.pop(key)    删除键值对  
+    dict.pop(key)    删除键值对并返回值  
+    del dict[key]    删除键值对  
+    dict.clear()     清空字典  
     dict[key]=value  增加键值对  
+    dict.get(key,value=None)  返回key对应的值，没有则返回value    
+    dict.update(dict1)  将dict1的键值对赋给dict  
     dict.item()      以列表形式返回k-v对  
     dict.keys()      以列表形式返回k  
     dict.values()    以列表形式返回v  
@@ -125,8 +132,17 @@ print('....'%())
 不管是C++还是python，字符串、文件读写或文件路径的操作都是字符串的操作，字符串操作是共有且常用的问题，有必要专题整理总结  
 
 ---
-## 字符编码方式
-`#-*- coding=utf-8 -*-` 采用utf-8解码方式，可以支持中文注释或中文字符。  
+## 字符编码方式  
+python中三种编码方式 : ascii unicode utf-8  
+区别：  
+ascii 一个字节 只能表示英文字母数字等，不能表示其他语言字符  
+unicode 两个字节或更多字节 兼容ascii 支持多语言 但是对纯英文的字符编码，空间利用率不高  
+utf-8 可变长编码 如英文一字节，中文三字节 兼容ascii 支持多语言 针对不同类型字符采用不同长度空间编码  
+转换方式：  
+内存中采用unicode 在外部存储中采用ascii或utf-8  
+内存到文件，将字符编码为ascii或utf-8存储  
+文件到内存，将ascii或utf-8字符解析为unicode使用  
+文本编辑器设置为utf-8 without BOM 并且在代码前注明`#-*- coding=utf-8 -*-`  则该文本采用utf-8方式进行编码  
 ## python的字符串
     字符串类型str，可以看做是一个含有相应字符的列表。  
     ord()，chr()     对应字符的阿斯卡码，阿斯卡码对应的字符  
