@@ -4,6 +4,7 @@ import numpy as np
   np.ones((rows,cols),dtype=' ')  
   np.zeros((rows,cols),dtype=' ')  
   np.empty((rows,cols),dtype=' ')  
+  np.eye(x,dtype=' ')  
   
   np.ones_like(array,dtype='')  
   np.zeros_like(array,dtype='')  
