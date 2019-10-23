@@ -119,17 +119,34 @@ map(function,iterable) 返回一个迭代器
 reduce(function(x,y),iterable) 返回最后的计算结果,function必须是接收两个参数  
 filter(function,iterable)  返回一个迭代器，根据function返回值是True或False来决定是否留下元素。  
 lambda variable:表达式  lambda冒号前的是参数，函数返回值就是表达式的结果  
-sorted(list,key,reverse)
+sorted(list,key,reverse)  
 zip(一个或多个迭代器)  将多个对应位置的元素组成新的一组tuple，返回一个迭代器。  
 zip(\*迭代器) 将迭代器最外面的[]去掉，里面的元素成为zip的迭代器进行处理。  
-# 生成器、迭代器
-生成器与列表生成器类似，只是用()而不是[]，用for循环访问元素，生成器、迭代器节省空间。
+# 偏函数  
+```python
+from functool import partial
+partial(func,arg=default value)
+```
+# 闭包  
+函数作为返回值的函数  
+# 装饰器  
+加强函数功能
+```python
+def decorator(func):
+  @functool.warp(func)  //更改返回函数的func.__name__
+  def returnfunc()
+    pass
+  return returnfunc
+@decorator()
+def func()
+```
 # 类
-class.__dict__  
+`class.__dict__`  
 ---
 # 字符串  
 不管是C++还是python，字符串、文件读写或文件路径的操作都是字符串的操作，字符串操作是共有且常用的问题，有必要专题整理总结  
-
+# 字符串流  
+StringIO BytesIO
 ---
 ## 字符编码方式  
 python中三种编码方式 : ascii unicode utf-8  
